@@ -5,14 +5,14 @@ import java.util.Scanner;
 
 public class CalulatorBMI {
     public static void main(String[] args) {
-        Scanner scanner=new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         double weight, height, bmi;
         System.out.print("Your weight (in kilogram): ");
-        weight=scanner.nextDouble();
+        weight = scanner.nextDouble();
         System.out.print("Your height (in meter): ");
-        height=scanner.nextDouble();
-        bmi=weight/Math.pow(height,2);
-        System.out.printf("%-20s%s","bmi","Interpretation \n");
+        height = scanner.nextDouble();
+        bmi = weight / Math.pow(height, 2);
+        System.out.printf("%-20s%s", "bmi", "Interpretation \n");
 
         if (bmi < 18)
             System.out.printf("%-20.2f%s", bmi, "Underweight");

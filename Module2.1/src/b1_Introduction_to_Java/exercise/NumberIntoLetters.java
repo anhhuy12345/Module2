@@ -1,5 +1,6 @@
 //Ứng dụng đọc số thành chữ
 package b1_Introduction_to_Java.exercise;
+
 import java.util.Scanner;
 
 public class NumberIntoLetters {
@@ -263,13 +264,13 @@ public class NumberIntoLetters {
                         break;
                 }
             }
-            if(tens==""&&ones=="") {
-                result=hundreds+" hundreds";
+            if (tens == "" && ones == "") {
+                result = hundreds + " hundreds";
             } else {
-                result=hundreds+" hundreds and "+tens+" "+ones;
+                result = hundreds + " hundreds and " + tens + " " + ones;
             }
         } else {
-            result+="out of ability";
+            result += "out of ability";
         }
         System.out.println("read number: " + number + " is " + result);
     }

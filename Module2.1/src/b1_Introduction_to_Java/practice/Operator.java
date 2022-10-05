@@ -14,7 +14,7 @@ public class Operator {
         System.out.println("Enter height: ");
         height=scanner.nextFloat(); //Nhập chiều dài
         float area=width*height;
-        System.out.println("Area is "+area);
+        System.out.printf("Area is "+area);
 
     }
 }
