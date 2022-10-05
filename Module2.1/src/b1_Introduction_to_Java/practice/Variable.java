@@ -1,6 +1,6 @@
 package b1_Introduction_to_Java.practice;
 
-public class KhaiBaoVaSuDungBien {
+public class Variable {
     public static void main(String[] args) {
         int i=10;
         float f=20.5f;

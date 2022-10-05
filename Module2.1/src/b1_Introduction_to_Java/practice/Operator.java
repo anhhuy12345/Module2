@@ -3,7 +3,7 @@ package b1_Introduction_to_Java.practice;
 import java.util.Scanner;
 
 //Viết một ứng dụng để tính diện tích của hình chữ nhật dựa vào chiều rộng và chiều cao được nhập vào.
-public class SuDungToanTu {
+public class Operator {
     public static void main(String[] args) {
         float width;
         float height;
