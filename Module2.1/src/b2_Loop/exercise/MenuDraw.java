@@ -49,7 +49,7 @@ public class MenuDraw {
                     case 2:
                         System.out.print("Enter the length of square triangle: ");
                         int sideTopRight = input.nextInt();
-                        System.out.println("Draw the square triangle top-right!");
+                        System.out.println("Draw the square triangle top-right!");//tam giác vuông với gócvuoong bên phải
                         for (int row = 0; row < sideTopRight; row++) {
                             for (int i = 0; i < row; i++) {
                                 System.out.print(" ");
@@ -64,7 +64,7 @@ public class MenuDraw {
                     case 3:
                         System.out.print("Enter the length of square triangle: ");
                         int sideBottomLeft = input.nextInt();
-                        System.out.println("Draw the square triangle bottom-left!");
+                        System.out.println("Draw the square triangle bottom-left!");//tam giác vuông với góc vuông bên trái nằm dưới
                         for (int i = 0; i < sideBottomLeft; i++) {
                             for (int j = 0; j <= i; j++) {
                                 System.out.print("*");
@@ -75,7 +75,7 @@ public class MenuDraw {
                     case 4:
                         System.out.print("Enter the length of square triangle: ");
                         int sideBottomRight = input.nextInt();
-                        System.out.println("Draw the square triangle bottom-right!");
+                        System.out.println("Draw the square triangle bottom-right!");//tam giác vuông với góc vuông bên phải nằm dưới
                         for (int row = 1; row <= sideBottomRight; row++) {
                             for (int i = sideBottomRight; i > row; i--) {
                                 System.out.print(" ");
