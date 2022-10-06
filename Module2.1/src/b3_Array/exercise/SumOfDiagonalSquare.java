@@ -7,7 +7,7 @@ package b3_Array.exercise;
 import java.util.Scanner;
 
 public class SumOfDiagonalSquare {
-    public static void main(String[] args) {
+        public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         //nhập chiều dài ma trận
         int row, col;
@@ -40,12 +40,58 @@ public class SumOfDiagonalSquare {
         for (int i = 0; i < arr.length; i++) {
             total += arr[i][i];
         }
-     //   int total1 = 0;
-    //    for (int i = 0; i < arr.length - 1; i--) {
-   //         total1 -= arr[i-1][i-1];
-     //   }
+        int total1 = 0;
+        for (int i = 0; i < arr.length; i++) {
+            total1 += arr[i][arr.length - 1 - i];
 
-        System.out.print("\nTotal maindiagonal in array: " + total);
+
+        }
+        System.out.print("\nTotal maindiagonal in array: " + total + " and " + total1);
     }
 }
+//Cách 2:
+//    public static void main(String[] args) {
+//        Scanner scanner = new Scanner(System.in);
+//        int[][] arr;
+//        int size;
+//        do {
+//            System.out.println("nhap kich thuoc cua ma tran vuong(<20): ");
+//            size = scanner.nextInt();
+//            if (size > 20) {
+//                System.out.println("Vui long nhap lai");
+//            }
+//        } while (size > 20);
+//        arr = new int[size][size];
+//        for (int i = 0; i < size; i++) {
+//            for (int j = 0; j < size; j++) {
+//                System.out.print("phan tu thu [" + i + "]" + "[" + j + "] :");
+//                arr[i][j] = scanner.nextInt();
+//
+//            }
+//        }
+//        for (int i = 0; i < size; i++) {
+//            for (int j = 0; j < size; j++) {
+//                System.out.print(arr[i][j] + " ");
+//            }
+//            System.out.println("");
+//        }
+//        int totalDiagonal1 = 0;
+//        int totalDiagonal2 = 0;
+//        for (int i = 0; i < size; i++) {
+//            for (int j = 0; j < size; j++) {
+//                if (i == j) {
+//                    totalDiagonal1 += arr[i][j];
+//                }
+//                if (j == size - i - 1) {
+//                    totalDiagonal2 += arr[i][j];
+//                }
+//
+//            }
+//        }
+//        System.out.println("Tong duong cheo chinh cua ma tran la: " + totalDiagonal1);
+//        System.out.println("Tong duong cheo phu cua ma tran la: " + totalDiagonal2);
+//    }
+//}
+
+
 
