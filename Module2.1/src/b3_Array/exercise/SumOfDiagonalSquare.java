@@ -7,7 +7,7 @@ package b3_Array.exercise;
 import java.util.Scanner;
 
 public class SumOfDiagonalSquare {
-        public static void main(String[] args) {
+    public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         //nhập chiều dài ma trận
         int row, col;
@@ -37,15 +37,24 @@ public class SumOfDiagonalSquare {
         }
         //Tính tổng đường chéo
         int total = 0;
-        for (int i = 0; i < arr.length; i++) {
-            total += arr[i][i];
-        }
         int total1 = 0;
         for (int i = 0; i < arr.length; i++) {
-            total1 += arr[i][arr.length - 1 - i];
-
-
+            for (int j = 0; j < arr[i].length;j++){
+                if (i == j) {
+                    total += arr[i][i];
+                }
+                if (j == arr[i].length - 1) {
+                    total1 += arr[i][arr.length - 1 - i];
+                }
+            }
         }
+        //tính đường chéo còn lại theo kiểu rườm rà hơn
+//        int total1 = 0;
+//        for (int i = 0; i < arr.length; i++) {
+//            total1 += arr[i][arr.length - 1 - i];
+//
+//
+//        }
         System.out.print("\nTotal maindiagonal in array: " + total + " and " + total1);
     }
 }
