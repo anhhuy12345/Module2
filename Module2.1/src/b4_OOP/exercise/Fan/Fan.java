@@ -21,11 +21,11 @@ public class Fan {
 
     //Trường speed có kiểu số nguyên
     // (private int) để xác định tốc độ quạt, mặc định là SLOW
-     private int speed = SLOW;
+    private int speed = SLOW;
 
     //Trường on có kiểu private boolean
     // để xác định quạt đang bật hay tắt, mặc định là false (tắt).
-     private boolean on = false;
+    private boolean on = false;
 
     //Trường radius có kiểu private
     // double để xác định bán kính quạt, giá trị mặc định là 5
@@ -33,7 +33,7 @@ public class Fan {
 
     //Trường color có kiểu
     // dữ liệu private String để xác định màu quạt, mặc định là blue
-     String color = "blue";
+    String color = "blue";
 
     //getter setter
     public int getSpeed() {

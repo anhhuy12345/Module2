@@ -1,5 +1,5 @@
 // chạy thử class dừng dồng hồ
-package b4_OOP.exercise.Stop_Watch;
+package b4_OOP.exercise.Stop_Watch_Exam.Stop_Watch;
 
 import java.util.Arrays;
 
