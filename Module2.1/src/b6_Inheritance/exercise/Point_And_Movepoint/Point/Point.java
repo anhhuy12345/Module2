@@ -6,14 +6,14 @@ public class Point {
     private float x=0.0f;
     private float y=0.0f;
 
-    //constructor
-    public Point() {}
-    public Point(float x, float y) {
-        this.x=x;
-        this.y=y;
+    public Point(){
+
+    }
+    public Point(float x,float y){
+        this.x = x;
+        this.y = y;
     }
 
-    //setter getter
     public float getX() {
         return x;
     }
@@ -29,24 +29,21 @@ public class Point {
     public void setY(float y) {
         this.y = y;
     }
-
-    public void setXY(float x, float y) {
-        this.x=x;
-        this.y=y;
+    public void setXY(float x, float y){
+        this.x = x;
+        this.y = y;
     }
-
-    public float[] getXY() {
-        float[] arr={this.x, this.y};
+    public float[] getXY(){
+        float[] arr ={this.x, this.y};
         return arr;
     }
 
     @Override
     public String toString() {
-        return "x: " +
-                getX()
-                +" y: "
-                +getY()
-                +" Array xy"
-                + Arrays.toString(getXY());
+        return "Point{" +
+                "x=" + x +
+                ", y=" + y +
+                ", arr= "+Arrays.toString(getXY())+
+                '}';
     }
 }

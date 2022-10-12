@@ -49,7 +49,7 @@ public class Point2D {
         return "Point2D{" +
                 "x=" + x +
                 ", y=" + y +
-                "array of x, y =" + Arrays.toString(getXY()) +
+                " , array of x, y =" + Arrays.toString(getXY()) +
                 "}";
 
     }

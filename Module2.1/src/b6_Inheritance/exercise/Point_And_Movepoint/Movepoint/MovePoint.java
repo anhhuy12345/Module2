@@ -8,8 +8,8 @@ public class MovePoint extends Point {
     private float xSpeed = 0.0f;
     private float ySpeed = 0.0f;
 
-    //constructor
     public MovePoint() {
+
     }
 
     public MovePoint(float x, float y, float xSpeed, float ySpeed) {
@@ -18,12 +18,6 @@ public class MovePoint extends Point {
         this.ySpeed = ySpeed;
     }
 
-    public MovePoint(float xSpeed, float ySpeed) {
-        this.xSpeed = xSpeed;
-        this.ySpeed = ySpeed;
-    }
-
-    //getter setter
     public float getxSpeed() {
         return xSpeed;
     }
@@ -40,7 +34,6 @@ public class MovePoint extends Point {
         this.ySpeed = ySpeed;
     }
 
-    //method
     public void setSpeed(float xSpeed, float ySpeed) {
         this.xSpeed = xSpeed;
         this.ySpeed = ySpeed;
@@ -53,16 +46,14 @@ public class MovePoint extends Point {
 
     @Override
     public String toString() {
-        return "x speed: "
-                + this.getxSpeed()
-                + " \ny speed: "
-                +this.getySpeed()
-                +" \narr(xSpeed,ySpeed): "
-                + Arrays.toString(getSpeed())
-                +"\n, which a subclass of "
-                +super.toString();
+        return "MovePoint{" +
+                "xSpeed=" + xSpeed +
+                ", ySpeed=" + ySpeed +
+                ", arr=" + Arrays.toString(getSpeed())+
+                "\n, which a subclass of "
+                +super.toString() +
+                '}';
     }
-
     public MovePoint move() {
         super.setX(super.getX()+this.xSpeed);
         super.setY(super.getY()+this.ySpeed);
