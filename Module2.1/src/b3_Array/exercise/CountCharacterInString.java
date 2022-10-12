@@ -2,7 +2,7 @@ package b3_Array.exercise;
 
 import java.util.Scanner;
 
-public class CountCharacterIntoString {
+public class CountCharacterInString {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         //Khai báo một chuỗi và gán cho nó một giá trị

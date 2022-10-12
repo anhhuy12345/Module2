@@ -37,6 +37,10 @@ public class SumOfDiagonalSquare {
         }
         //Tính tổng đường chéo
         int total = 0;
+//        for (int i = 0; i < arr.length; i++) {
+//            total += arr[i][i
+//            ];
+//        }
         int total1 = 0;
         for (int i = 0; i < arr.length; i++) {
             for (int j = 0; j < arr[i].length;j++){
@@ -52,8 +56,6 @@ public class SumOfDiagonalSquare {
 //        int total1 = 0;
 //        for (int i = 0; i < arr.length; i++) {
 //            total1 += arr[i][arr.length - 1 - i];
-//
-//
 //        }
         System.out.print("\nTotal maindiagonal in array: " + total + " and " + total1);
     }
@@ -75,7 +77,6 @@ public class SumOfDiagonalSquare {
 //            for (int j = 0; j < size; j++) {
 //                System.out.print("phan tu thu [" + i + "]" + "[" + j + "] :");
 //                arr[i][j] = scanner.nextInt();
-//
 //            }
 //        }
 //        for (int i = 0; i < size; i++) {
@@ -94,11 +95,9 @@ public class SumOfDiagonalSquare {
 //                if (j == size - i - 1) {
 //                    totalDiagonal2 += arr[i][j];
 //                }
-//
 //            }
 //        }
-//        System.out.println("Tong duong cheo chinh cua ma tran la: " + totalDiagonal1);
-//        System.out.println("Tong duong cheo phu cua ma tran la: " + totalDiagonal2);
+//        System.out.println("Tong duong cheo chinh cua ma tran la: " + totalDiagonal1 + " and " + totalDiagonal2 );
 //    }
 //}
 

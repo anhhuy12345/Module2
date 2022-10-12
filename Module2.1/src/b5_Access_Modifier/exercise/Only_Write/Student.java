@@ -8,25 +8,23 @@ public class Student {
     public Student() {
     }
 
-    ;
-
     //Hai phương thức có access modifier là public: setName và setClasses.
 
     String getName() {
         return name;
     }
 
-     String getClasses() {
+    String getClasses() {
         return classes;
     }
 
-//    public void setName(String name) {
-//        this.name = name;
-//    }
-//
-//    public void setClasses(String classes) {
-//        this.classes = classes;
-//    }
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setClasses(String classes) {
+        this.classes = classes;
+    }
 
 
 //    protected void setName(String name) {
@@ -47,11 +45,11 @@ public class Student {
 //    }
 
 
-    void setName(String name) {
-        this.name = name;
-    }
-
-    void setClasses(String classes) {
-        this.classes = classes;
-    }
+//    void setName(String name) {
+//        this.name = name;
+//    }
+//
+//    void setClasses(String classes) {
+//        this.classes = classes;
+//    }
 }

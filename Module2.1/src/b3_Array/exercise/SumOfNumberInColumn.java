@@ -7,7 +7,7 @@ package b3_Array.exercise;
 
 import java.util.Scanner;
 
-public class SumOfNumberInColor {
+public class SumOfNumberInColumn {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         //Nhập chiều dài của ma trận
