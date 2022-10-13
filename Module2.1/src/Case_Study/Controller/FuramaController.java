@@ -9,24 +9,27 @@ public class FuramaController {
         Scanner scanner = new Scanner(System.in);
         int choice;
 
-        do {
+        while (true) {
+            do {
 
-            mainMenu();
-            choice = scanner.nextInt();
-            if (choice < 1 || choice > 7) {
-                System.out.println("please enter again:");
-            } else
-                break;
-        } while (true);
-        switch (choice) {
-            case 1:
-                addNewservice();
-                break;
-            case 2:
-                showService();
-                break;
-            case 3:
-                break;
+                mainMenu();
+                choice = scanner.nextInt();
+                if (choice < 1 || choice > 7) {
+                    System.out.println("please enter again:");
+                } else
+                    break;
+            } while (true);
+
+            switch (choice) {
+                case 1:
+                    addNewservice();
+                    break;
+                case 2:
+                    showService();
+                    break;
+                case 3:
+                    break;
+            }
         }
     }
 
@@ -76,7 +79,7 @@ public class FuramaController {
                 System.out.println("liu liu");
                 break;
             case 4:
-                mainMenu();
+//                mainMenu();
                 return;
             case 5:
                 System.out.println("byebye");
