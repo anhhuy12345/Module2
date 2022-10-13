@@ -13,7 +13,7 @@ public class SquareColorableMain {
 
             if (squares[i] instanceof SquareColorable) {
                 System.out.println("Square has Colorable is Square " + i + ": ");
-                ((SquareColorable) squares[i]).howToColor();
+                System.out.println(" Color All Four Size");
             }
         }
     }
