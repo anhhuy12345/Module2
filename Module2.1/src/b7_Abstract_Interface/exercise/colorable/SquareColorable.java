@@ -13,3 +13,4 @@ public class SquareColorable extends Square implements Colorable {
         System.out.println(" Color All Four Size");
     }
 }
+
