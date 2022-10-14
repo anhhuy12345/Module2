@@ -1,4 +1,4 @@
-package b8_Clean_Code.exercise.com.codegym;
+package b8_Clean_Code.exercise;
 
 public class TennisGame {
     public static final int LOVE = 0;
