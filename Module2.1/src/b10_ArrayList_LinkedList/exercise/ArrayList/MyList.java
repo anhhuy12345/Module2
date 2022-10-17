@@ -91,8 +91,8 @@ public class MyList<E> {
     //xuất 1 phần tử tại index bất kì
     public E get(int index) {
         //kiểm tra index có trong mảng hay không, nếu không thì báo lỗi
-        if(index<0||index>this.size) {
-            throw new IllegalArgumentException("Index"+index+" ERROR");
+        if (index < 0 || index > this.size) {
+            throw new IllegalArgumentException("Index" + index + " ERROR");
         } else {
             return (E) this.elements[index];
         }
@@ -130,7 +130,7 @@ public class MyList<E> {
             throw new IllegalArgumentException("ERROR index: " + index);
         } else {
             //phần từ bị xoá
-            E removeElement= (E) this.elements[index];
+            E removeElement = (E) this.elements[index];
             for (int i = index; i < this.size; i++) {
                 this.elements[i] = this.elements[i + 1];
             }

@@ -55,40 +55,39 @@ public class MyListMain {
         studentMyList.add(4, student5);
 
 
-
         //xuất mảng
         for (int i = 0; i < studentMyList.size(); i++) {
             //lấy phần từ trong mảng và gán nó kiểu Student
             Student studentTest = (Student) studentMyList.elements[i];
-                System.out.print("id: " + studentTest.id + " ");
-                System.out.print("name: " + studentTest.name);
-                System.out.println();
+            System.out.print("id: " + studentTest.id + " ");
+            System.out.print("name: " + studentTest.name);
+            System.out.println();
         }
 
-        System.out.println("size present: "+studentMyList.size());
+        System.out.println("size present: " + studentMyList.size());
 
         //lấy ra phần tử vị trí bất kì
-        System.out.println("student index 3 :"+studentMyList.get(3).getName());
+        System.out.println("student index 3 :" + studentMyList.get(3).getName());
 
         //xuất vị trí của phần tử bất kì
-        System.out.println("student5 has index: "+studentMyList.indexOf(student5));
+        System.out.println("student5 has index: " + studentMyList.indexOf(student5));
 
         //kiểm tra phần tử có trong mảng không
-        System.out.println("check element in array: "+studentMyList.contains(student6));
+        System.out.println("check element in array: " + studentMyList.contains(student6));
 
         //kiểm tra copy mảng
-        MyList<Student> copyStudent=new MyList<>();
-        copyStudent=studentMyList.clone();
+        MyList<Student> copyStudent = new MyList<>();
+        copyStudent = studentMyList.clone();
         //xuất copy mảng
         System.out.println("\ncopy Array: ");
         for (int i = 0; i < copyStudent.size(); i++) {
             //lấy phần từ trong mảng và gán nó kiểu Student
             Student studentCopy = (Student) studentMyList.elements[i];
-                System.out.print("id: " + studentCopy.id + " ");
-                System.out.print("name: " + studentCopy.name);
-                System.out.println();
+            System.out.print("id: " + studentCopy.id + " ");
+            System.out.print("name: " + studentCopy.name);
+            System.out.println();
         }
-        System.out.println("size present: "+studentMyList.size());
+        System.out.println("size present: " + studentMyList.size());
 
 
         System.out.println("\nREMOVE element: ");
@@ -97,10 +96,10 @@ public class MyListMain {
         for (int i = 0; i < studentMyList.size(); i++) {
             //lấy phần từ trong mảng và gán nó kiểu Student
             Student studentCopy = (Student) studentMyList.elements[i];
-                System.out.print("id: " + studentCopy.id + " ");
-                System.out.print("name: " + studentCopy.name);
-                System.out.println();
+            System.out.print("id: " + studentCopy.id + " ");
+            System.out.print("name: " + studentCopy.name);
+            System.out.println();
         }
-        System.out.println("size present after remove: "+studentMyList.size());
+        System.out.println("size present after remove: " + studentMyList.size());
     }
 }
