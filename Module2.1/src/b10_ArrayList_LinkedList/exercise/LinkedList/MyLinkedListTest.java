@@ -51,7 +51,7 @@ public class MyLinkedListTest {
         }
 
         System.out.println("student2 có trong liên kết hay không " + studentMyLinkedList.contains(student2));
-        System.out.println("student2 ở vị trí thứ: " + studentMyLinkedList.indexOf(student2));
+        System.out.println("studentt2 ở vị trí thứ: " + studentMyLinkedList.indexOf(student2));
 
         Student studentFirst = studentMyLinkedList.getFirst();
         System.out.println("Học sinh đầu tiên là: " + studentFirst.getName() + " " + studentFirst.getId());
@@ -60,6 +60,7 @@ public class MyLinkedListTest {
 
         System.out.println("\nPhần tử student 6 có thêm vào được mảng không: " + studentMyLinkedList.add(a));
         System.out.println();
+
         System.out.println("Linked List sau khi thêm student6: ");
         for (int i = 0; i < studentMyLinkedList.size(); i++) {
             Student studentElement = studentMyLinkedList.get(i);

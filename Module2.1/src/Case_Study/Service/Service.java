@@ -9,6 +9,5 @@ public interface Service {
 
     //cập nhật
     void edit();
-//    //xoá
-//    public void delete();
+
 }
