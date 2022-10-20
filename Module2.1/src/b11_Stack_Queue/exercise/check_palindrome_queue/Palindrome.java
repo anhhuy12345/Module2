@@ -14,7 +14,7 @@ public class Palindrome {
         Stack<Character> rightString = new Stack<>();
         Scanner scanner = new Scanner(System.in);
         System.out.print("Input String: ");
-        String inputString = scanner.nextLine();
+        String inputString = scanner.nextLine().toLowerCase();
         int length = inputString.length();
 
         //xét phần bên trái

@@ -5,6 +5,8 @@
 package b11_Stack_Queue.exercise.use_map_treemap;
 
 
+import sun.security.mscapi.CKeyPairGenerator;
+
 import java.util.Map;
 import java.util.Scanner;
 
@@ -21,7 +23,7 @@ public class TreeMap {
                 //cộng giá trị value thêm 1
                 stringIntegerMap.put(stringArray[i], stringIntegerMap.get(stringArray[i]) + 1);
             } else {
-                stringIntegerMap.put(stringArray[i], 1);
+                stringIntegerMap.put(stringArray[i],1);
             }
         }
         //xuất kết quả

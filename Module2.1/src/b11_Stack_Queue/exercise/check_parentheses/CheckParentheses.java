@@ -14,7 +14,7 @@ public class CheckParentheses {
         // khai báo stack
         Stack<String> stringStack = new Stack<>();
         for (String string : strings) {
-            // thêm ngoặc "("
+            // kiểm tra ngoặc "("
             if ("(".equals(string)) {
                 stringStack.push(string);
             }
