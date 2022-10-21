@@ -48,7 +48,7 @@ public class MainProductArrayList {
                             productManager.sortProductLowToHigh();
                             break;
                         case 2:
-                            productManager.sortProductHighToLow();
+                            productManager.sortProductHighToLow();;
                             break;
                         default:
                             System.out.println("NOT SORT!");
