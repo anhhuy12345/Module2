@@ -21,11 +21,11 @@ public class BookingController {
              }
              switch (choice) {
                  case 1:
-                     System.out.println("hihi");
+                     System.out.println();
 
                      break;
                  case 2:
-                     System.out.println("huhu");
+                     System.out.println();
                      break;
                  case 3:
                      return;

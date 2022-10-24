@@ -42,7 +42,7 @@ public class BinarySearchRecursion {
         ) {
             System.out.print("  " + n);
         }
-        int target = 9;
+        int target = 5;
 
         int left = 0;
         int right = arr.length - 1;

@@ -1,10 +1,12 @@
 package b14_Sort_Algorithm.exercise;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
+import java.util.Stack;
 
 public class InsertionSortByStep {
-    public static void main(String[] args) {
+        public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter list size: ");
         int size = scanner.nextInt();
@@ -44,4 +46,23 @@ public class InsertionSortByStep {
         System.out.print("Array after insertion sort: ");
         Arrays.stream(array).forEach(element-> System.out.printf("%-4d", element));
     }
+//    public static void main(String[] args) {
+//        Scanner scanner = new Scanner(System.in);
+//        Stack<Integer> integers = new Stack<>();
+//        //nhập phần tử
+//        System.out.print("input number element: ");
+//        int number = scanner.nextInt();
+//        for (int i = 0; i < number; i++) {
+//            System.out.print("input element [" + i + "]: ");
+//            int element = scanner.nextInt();
+//            integers.push(element);
+//        }
+//        System.out.println("Mảng ban đầu: " + integers.toString());
+////        for (int n : integers
+////        ) {
+////            System.out.print(n + " ");
+////        }
+//        integers.stream().sorted().forEach(n -> System.out.print(n != integers.lastElement() ? n + ", " : n));
+//
+//        }
 }

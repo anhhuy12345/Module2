@@ -1,6 +1,7 @@
 package b14_Sort_Algorithm.exercise;
 
 import java.util.Arrays;
+import java.util.List;
 
 //Minh hoạ thuật toán sắp xếp chèn
 public class InsertionSort {
@@ -11,9 +12,9 @@ public class InsertionSort {
             temp = array[i];
             indexTemp = i;
             //dời vị trí để tìm kiếm nơi cần chèn vào
-            while (indexTemp > 0 && temp < array[indexTemp-1]) {
+            while (indexTemp > 0 && temp < array[indexTemp - 1]) {
                 array[indexTemp] = array[indexTemp - 1];
-                indexTemp-- ;
+                indexTemp--;
             }
             //gắn phần tử vào nơi thích hợp
             array[indexTemp] = temp;
@@ -21,11 +22,16 @@ public class InsertionSort {
 
         //xuất mảng sau khi sort
         System.out.print("Array after insertion sort: ");
-        Arrays.stream(array).forEach(element-> System.out.printf("%-4d", element));
+        Arrays.stream(array).forEach(element -> System.out.printf("%-4d", element));
     }
 
     public static void main(String[] args) {
         int[] list = {2, 3, 2, 5, 6, 1, -2, 3, 14, 12};
         insertionSort(list);
     }
+    //thử dùng stream :))
+//    public static void main(String[] args) {
+//        List<Integer> list =   Arrays.asList(2, 3, 2, 5, 6, 1, -2, 3, 14, 12);
+//        list.stream().sorted().forEach(System.out::println);
 }
+

@@ -1,4 +1,8 @@
 package Case_Study.Service.Implement;
 
-public class PromotionServiceImpl {
+
+import Case_Study.Service.PromotionService;
+
+public class PromotionServiceImpl  {
+
 }
