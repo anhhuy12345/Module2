@@ -70,8 +70,9 @@ import java.util.Scanner;
 //            System.out.println("\n----------Employee Menu----------");
 //            System.out.println("1.\tDisplay list employees");
 //            System.out.println("2.\tAdd new employee");
-//            System.out.println("3.\tEdit employee");
-//            System.out.println("4.\tReturn main menu");
+//            System.out.println("3.\tDelete employee");
+//            System.out.println("4.\tEdit employee");
+//            System.out.println("5.\tReturn main menu");
 //            System.out.print("input Employee Menu: ");
 //            //cho choice bằng 0 vì nó không nằm từ 1->6 và chương trình chạy bình thường
 //            int choice = 0;
@@ -90,6 +91,9 @@ import java.util.Scanner;
 //                    employeeList.addNew();
 //                    break;
 //                case 3:
+//                    employeeList.delete();
+//                     break;
+//                case 4:
 //                    employeeList.edit();
 //                    break;
 //                case 4:
@@ -165,9 +169,8 @@ import java.util.Scanner;
 //                case 2:
 //                    while (true) {
 //                        System.out.println("1.\tAdd New Villa");
-//                        System.out.println("2.\tAdd New House");
-//                        System.out.println("3.\tAdd New Room");
-//                        System.out.println("4.\tBack to menu");
+//                        System.out.println("2.\tAdd New Room");
+//                        System.out.println("3.\tBack to menu");
 //                        System.out.print("Input facility: ");
 //                        //cho choice bằng 0 vì nó không nằm từ 1->6 và chương trình chạy bình thường
 //                        int inputFacility = 0;
@@ -182,12 +185,9 @@ import java.util.Scanner;
 //                                facilityList.addNewVilla();
 //                                break;
 //                            case 2:
-//                                facilityList.addNewHouse();
-//                                break;
-//                            case 3:
 //                                facilityList.addNewRoom();
 //                                break;
-//                            case 4:
+//                            case 3:
 //                                displayFacilityMenu();
 //                                break;
 //                        }

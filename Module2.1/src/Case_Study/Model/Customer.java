@@ -1,35 +1,54 @@
 package Case_Study.Model;
 
 public class Customer extends Person {
-    private String address;
-    private String customerType;
+    private String idCustomer;
+    private String rankCustomer;
 
-    public Customer(){}
+    // rankCustomer: Loại Customer bao gồm: (Diamond, Platinum, Gold, Silver, Member).
 
-    public Customer(String id, String name, String birthday, String sex, int indentityCard, int phoneNumber, String email, String address, String customerType){
-        super(id, name, birthday, sex, indentityCard, phoneNumber, email);
-        this.address = address;
-        this.customerType = customerType;
+    //constructor
+
+    public Customer() {
     }
 
-    public String getAddress() {
-        return address;
+    public Customer(String name, String dateOfBirth, String sex, String id, int phoneNumber, String email, String address, String idCustomer, String rankCustomer) {
+        super(name, dateOfBirth, sex, id, phoneNumber, email, address);
+        this.idCustomer = idCustomer;
+        this.rankCustomer = rankCustomer;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    //getter setter
+
+    public String getIdCustomer() {
+        return idCustomer;
     }
 
-    public String getCustomerType() {
-        return customerType;
+    public void setIdCustomer(String idCustomer) {
+        this.idCustomer = idCustomer;
     }
 
-    public void setCustomerType(String customerType) {
-        this.customerType = customerType;
+    public String getRankCustomer() {
+        return rankCustomer;
     }
-    public String toStringPerson() {
-        return "Customer: " + super.toStringPerson() +
-                "Address: " + address +"\n"+
-                "Customer Type: " + customerType;
+
+    public void setRankCustomer(String rankCustomer) {
+        this.rankCustomer = rankCustomer;
+    }
+
+    //xuất thông tin
+
+    public String toStringDisplay() {
+        return "Customer{" + super.toStringDisplay() +
+                "idCustomer='" + idCustomer + '\'' +
+                ", rankCustomer='" + rankCustomer + '\'' +
+                '}';
+    }
+
+    //dùng cho file CSV
+
+    @Override
+    public String toString() {
+        return super.toString() + "," + idCustomer +
+                "," + rankCustomer;
     }
 }

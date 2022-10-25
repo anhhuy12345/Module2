@@ -1,25 +1,34 @@
 package Case_Study.Model;
 
 public class Room extends Facility {
-    private String freeService;
+    private String serviceFreeRoom;
 
-    public Room(){}
+    //constructor
 
-    public Room(String idFacility, String name, double area, Double cost, int maxPeople, String rentalType,String freeService){
-        super(idFacility, name, area, cost, maxPeople, rentalType);
-        this.freeService = freeService;
+    public Room() {
     }
 
-    public String getFreeService() {
-        return freeService;
+    public Room(String idFacility, String name, double area, double cost, int maxPeople, String rentType, String serviceFreeRoom) {
+        super(idFacility, name, area, cost, maxPeople, rentType);
+        this.serviceFreeRoom = serviceFreeRoom;
     }
 
-    public void setFreeService(String freeService) {
-        this.freeService = freeService;
+    //getter setter
+
+    public String getServiceFreeRoom() {
+        return serviceFreeRoom;
     }
+
+    public void setServiceFreeRoom(String serviceFreeRoom) {
+        this.serviceFreeRoom = serviceFreeRoom;
+    }
+
+    //xuất thông tin
+
     @Override
-    public String toStringDisplay(){
-        return "Room: "+ super.toStringDisplay() + " "+
-                " Free service" + freeService;
+    public String toStringDisplay() {
+        return "Room{" + super.toStringDisplay() + "," +
+                "serviceFreeRoom='" + serviceFreeRoom + '\'' +
+                '}';
     }
 }

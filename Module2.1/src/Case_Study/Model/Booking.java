@@ -2,21 +2,25 @@ package Case_Study.Model;
 
 public class Booking {
     private int idBooking;
-    private String starDate;
+    private String startDate;
     private String endDate;
     private Customer customer;
     private Facility facility;
 
+    //constructor
+
     public Booking() {
     }
 
-    public Booking(int idBooking, String starDate, String endDate, Customer customer, Facility facility) {
+    public Booking(int idBooking, String startDate, String endDate, Customer customer, Facility facility) {
         this.idBooking = idBooking;
-        this.starDate = starDate;
+        this.startDate = startDate;
         this.endDate = endDate;
         this.customer = customer;
         this.facility = facility;
     }
+
+    //getter setter
 
     public int getIdBooking() {
         return idBooking;
@@ -26,12 +30,12 @@ public class Booking {
         this.idBooking = idBooking;
     }
 
-    public String getStarDate() {
-        return starDate;
+    public String getStartDate() {
+        return startDate;
     }
 
-    public void setStarDate(String starDate) {
-        this.starDate = starDate;
+    public void setStartDate(String startDate) {
+        this.startDate = startDate;
     }
 
     public String getEndDate() {
@@ -61,11 +65,21 @@ public class Booking {
     public String toStringDisplay() {
         return "Booking{" +
                 "idBooking=" + idBooking +
-                ", startDate='" + starDate + '\'' +
+                ", startDate='" + startDate + '\'' +
                 ", endDate='" + endDate + '\'' +
                 ", customer=" + customer +
                 ", facility=" + facility +
                 '}';
+    }
 
+    //dùng cho file CSV
+
+    @Override
+    public String toString() {
+        return idBooking +
+                "," + startDate +
+                "," + endDate +
+                "," + customer +
+                "," + facility;
     }
 }

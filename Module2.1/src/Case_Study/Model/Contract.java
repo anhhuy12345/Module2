@@ -3,20 +3,28 @@ package Case_Study.Model;
 public class Contract {
     private int idContract;
     private int idBooking;
-    private double deposit;
-    private double totalPay;
-    private int idCostumer;
+    private double deposit;  //số tiền đặt cọc
+    private double totalMoney;
+    private String idCustomer;
+    private String startDateFacility;
+    private String endDateFacility;
+
+    //constructor
 
     public Contract() {
     }
 
-    public Contract(int idContract, int idBooking, double deposit, double totalPay, int idCostumer) {
+    public Contract(int idContract, int idBooking, double deposit, double totalMoney, String idCustomer, String startDateFacility, String endDateFacility) {
         this.idContract = idContract;
         this.idBooking = idBooking;
         this.deposit = deposit;
-        this.totalPay = totalPay;
-        this.idCostumer = idCostumer;
+        this.totalMoney = totalMoney;
+        this.idCustomer = idCustomer;
+        this.startDateFacility = startDateFacility;
+        this.endDateFacility = endDateFacility;
     }
+
+    //getter setter
 
     public int getIdContract() {
         return idContract;
@@ -42,35 +50,48 @@ public class Contract {
         this.deposit = deposit;
     }
 
-    public double getTotalPay() {
-        return totalPay;
+    public double getTotalMoney() {
+        return totalMoney;
     }
 
-    public void setTotalPay(double totalPay) {
-        this.totalPay = totalPay;
+    public void setTotalMoney(double totalMoney) {
+        this.totalMoney = totalMoney;
     }
 
-    public int getIdCostumer() {
-        return idCostumer;
+    public String getIdCustomer() {
+        return idCustomer;
     }
 
-    public void setIdCostumer(int idCostumer) {
-        this.idCostumer = idCostumer;
+    public void setIdCustomer(String idCustomer) {
+        this.idCustomer = idCustomer;
     }
 
-    @Override
-    public String toString() {
-        return "Contract{" +
-                "idContract=" + idContract +
+    public String getStartDateFacility() {
+        return startDateFacility;
+    }
+
+    public void setStartDateFacility(String startDateFacility) {
+        this.startDateFacility = startDateFacility;
+    }
+
+    public String getEndDateFacility() {
+        return endDateFacility;
+    }
+
+    public void setEndDateFacility(String endDateFacility) {
+        this.endDateFacility = endDateFacility;
+    }
+
+    //xuất thông tin
+
+
+    public String toStringDisplay() {
+        return "idContract=" + idContract +
                 ", idBooking=" + idBooking +
                 ", deposit=" + deposit +
-                ", totalPay=" + totalPay +
-                ", idCostumer=" + idCostumer +
-                '}';
-    }
-
-    public String getInformationContract() {
-        return idContract + "," + idBooking + "," + deposit + "," + totalPay + "," + idCostumer;
-
+                ", totalMoney=" + totalMoney +
+                ", idCustomer='" + idCustomer + '\'' +
+                ", startDateFacility='" + startDateFacility + '\'' +
+                ", endDateFacility='" + endDateFacility + '\'';
     }
 }

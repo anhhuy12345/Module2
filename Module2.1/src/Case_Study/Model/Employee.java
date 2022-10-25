@@ -1,26 +1,35 @@
 package Case_Study.Model;
 
 public class Employee extends Person {
-    private String education;
+    private String idEmployee;
     private String level;
-    private double wage;
+    private String rankEmployee;     //vị trí
+    private double salary;  //lương
+
+    //level:         Trình độ sẽ lưu trữ các thông tin: Trung cấp, Cao đẳng, Đại học và sau đại học
+    //rankEmployee:   Vị trí sẽ lưu trữ các thông tin: Lễ tân, phục vụ, chuyên viên, giám sát, quản lý, giám đốc.
+
+    //constructor
 
     public Employee() {
     }
 
-    public Employee(String id, String name, String birthday, String sex, int indentityCard, int phoneNumber, String email, String education, String level, double wage) {
-        super(id, name, birthday, sex, indentityCard, phoneNumber, email);
-        this.education = education;
+    public Employee(String name, String dateOfBirth, String sex, String id, int phoneNumber, String email, String address, String idEmployee, String level, String rank, double salary) {
+        super(name, dateOfBirth, sex, id, phoneNumber, email, address);
+        this.idEmployee = idEmployee;
         this.level = level;
-        this.wage = wage;
+        this.rankEmployee = rank;
+        this.salary = salary;
     }
 
-    public String getEducation() {
-        return education;
+    //getter setter
+
+    public String getIdEmployee() {
+        return idEmployee;
     }
 
-    public void setEducation(String education) {
-        this.education = education;
+    public void setIdEmployee(String idEmployee) {
+        this.idEmployee = idEmployee;
     }
 
     public String getLevel() {
@@ -31,18 +40,30 @@ public class Employee extends Person {
         this.level = level;
     }
 
-    public double getWage() {
-        return wage;
+    public String getRankEmployee() {
+        return rankEmployee;
     }
 
-    public void setWage(double wage) {
-        this.wage = wage;
+    public void setRankEmployee(String rankEmployee) {
+        this.rankEmployee = rankEmployee;
     }
 
-    public String toStringPerson() {
-        return "Employee: " + super.toStringPerson() +
-                "Education: " + education +"\n"+
-                "Level: " + level +"\n"+
-                "Wage: " + wage;
+    public double getSalary() {
+        return salary;
+    }
+
+    public void setSalary(double salary) {
+        this.salary = salary;
+    }
+
+    //xuất thông tin
+
+    public String toStringDisplay() {
+        return "Employee{" + super.toStringDisplay() + "," +
+                "idEmployee='" + idEmployee + '\'' +
+                ", level='" + level + '\'' +
+                ", rankEmployee='" + rankEmployee + '\'' +
+                ", salary=" + salary +
+                '}';
     }
 }

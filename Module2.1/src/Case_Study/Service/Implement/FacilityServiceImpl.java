@@ -1,4 +1,7 @@
 package Case_Study.Service.Implement;
 
-public class FacilityServiceImpl {
-}
+import Case_Study.Service.FacilityService;
+
+//public class FacilityServiceImpl implements FacilityService {
+//
+//}

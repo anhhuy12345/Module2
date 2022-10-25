@@ -1,32 +1,31 @@
 package Case_Study.Model;
 
 public abstract class Facility {
+    //Các loại dịch vụ này sẽ bao có các thông tin:
+    // Tên dịch vụ, Diện tích sử dụng, Chi phí thuê, Số lượng người tối đa,
+    // Kiểu thuê (bao gồm thuê theo năm, tháng, ngày, giờ.
     private String idFacility;
     private String name;
     private double area;
     private double cost;
     private int maxPeople;
-    private String rentalType;
+    private String rentType;
+
+    //constructor
 
     public Facility() {
     }
 
-    public Facility(String idFacility, String name, double area, Double cost, int maxPeople, String rentalType) {
+    public Facility(String idFacility, String name, double area, double cost, int maxPeople, String rentType) {
         this.idFacility = idFacility;
         this.name = name;
         this.area = area;
         this.cost = cost;
         this.maxPeople = maxPeople;
-        this.rentalType = rentalType;
+        this.rentType = rentType;
     }
 
-    public String getIdFacility() {
-        return idFacility;
-    }
-
-    public void setIdFacility(String idFacility) {
-        this.idFacility = idFacility;
-    }
+    //getter setter
 
     public String getName() {
         return name;
@@ -60,21 +59,30 @@ public abstract class Facility {
         this.maxPeople = maxPeople;
     }
 
-    public String getRentalType() {
-        return rentalType;
+    public String getRentType() {
+        return rentType;
     }
 
-    public void setRentalType(String rentalType) {
-        this.rentalType = rentalType;
+    public void setRentType(String rentType) {
+        this.rentType = rentType;
     }
 
+
+    public String getIdFacility() {
+        return idFacility;
+    }
+
+    public void setIdFacility(String idFacility) {
+        this.idFacility = idFacility;
+    }
+
+    //đưa ra thông tin
     public String toStringDisplay() {
-        return "id Facility " + idFacility + " " +
-                "Name " + name + " " +
-                "Area " + area + " " +
-                "Cost " + cost + " " +
-                "Max People "+ maxPeople+ " "+
-                " Rental Type "+ rentalType;
-
+        return "idFacility='" + idFacility + '\'' +
+                ", name='" + name + '\'' +
+                ", area=" + area +
+                ", cost=" + cost +
+                ", maxPeople=" + maxPeople +
+                ", rentType='" + rentType + '\'';
     }
 }

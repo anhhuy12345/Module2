@@ -12,8 +12,8 @@ public class BookingComparator implements Comparator<Booking> {
         //format lại (ngày tháng năm) vì mặc đinh là ( tháng ngày năm)
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         //ép kiểu từ String qua Date
-        LocalDate startDate1 = LocalDate.parse(booking1.getStarDate(), formatter);
-        LocalDate startDate2 = LocalDate.parse(booking2.getStarDate(), formatter);
+        LocalDate startDate1 = LocalDate.parse(booking1.getStartDate(), formatter);
+        LocalDate startDate2 = LocalDate.parse(booking2.getStartDate(), formatter);
         LocalDate endDate1 = LocalDate.parse(booking1.getEndDate(), formatter);
         LocalDate endDate2 = LocalDate.parse(booking2.getEndDate(), formatter);
 

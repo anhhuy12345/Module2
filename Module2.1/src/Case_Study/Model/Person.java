@@ -1,34 +1,31 @@
 package Case_Study.Model;
 
-public class Person {
-    private String id;
+public abstract class Person {
     private String name;
-    private String birthday;
+    private String dateOfBirth;   //ngày sinh
     private String sex;
-    private int indentityCard;
+    private String id; //CMND
     private int phoneNumber;
     private String email;
+    private String address;
+
+
+    //constructor
 
     public Person() {
     }
 
-    public Person(String id, String name, String birthday, String sex, int indentityCard, int phoneNumber, String email) {
-        this.id = id;
+    public Person(String name, String dateOfBirth, String sex, String id, int phoneNumber, String email, String address) {
         this.name = name;
-        this.birthday = birthday;
+        this.dateOfBirth = dateOfBirth;
         this.sex = sex;
-        this.indentityCard = indentityCard;
+        this.id = id;
         this.phoneNumber = phoneNumber;
         this.email = email;
+        this.address = address;
     }
 
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
+    //getter setter
 
     public String getName() {
         return name;
@@ -38,12 +35,12 @@ public class Person {
         this.name = name;
     }
 
-    public String getBirthday() {
-        return birthday;
+    public String getDateOfBirth() {
+        return dateOfBirth;
     }
 
-    public void setBirthday(String birthday) {
-        this.birthday = birthday;
+    public void setDateOfBirth(String dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
     }
 
     public String getSex() {
@@ -54,12 +51,12 @@ public class Person {
         this.sex = sex;
     }
 
-    public int getIndentityCard() {
-        return indentityCard;
+    public String getId() {
+        return id;
     }
 
-    public void setIndentityCard(int indentityCard) {
-        this.indentityCard = indentityCard;
+    public void setId(String id) {
+        this.id = id;
     }
 
     public int getPhoneNumber() {
@@ -78,13 +75,23 @@ public class Person {
         this.email = email;
     }
 
-    public String toStringPerson() {
-        return "ID: " + id + "\n" +
-                " Name : " + name + "\n" +
-                " birthday " + birthday + "\n" +
-                "Sex " + sex + "\n" +
-                "Indentity Card " + indentityCard + "\n" +
-                "Phone number" + phoneNumber + "\n" +
-                "Email" + email;
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+
+    //đưa thông tin
+    public String toStringDisplay() {
+        return "name='" + name + '\'' +
+                ", dateOfBirth='" + dateOfBirth + '\'' +
+                ", sex='" + sex + '\'' +
+                ", id='" + id + '\'' +
+                ", phoneNumber=" + phoneNumber +
+                ", email='" + email + '\'' +
+                ", address='" + address + '\'';
     }
 }

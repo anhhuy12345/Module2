@@ -4,4 +4,5 @@ import Case_Study.Service.Service;
 
 public interface BookingService extends Service {
 
+
 }
