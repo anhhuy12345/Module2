@@ -31,4 +31,11 @@ public class Room extends Facility {
                 "serviceFreeRoom='" + serviceFreeRoom + '\'' +
                 '}';
     }
+    //dùng cho file CSV
+
+    @Override
+    public String toString() {
+        return super.toString() + "," + serviceFreeRoom;
+    }
 }
+

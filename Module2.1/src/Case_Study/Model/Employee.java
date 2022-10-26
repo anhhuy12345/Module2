@@ -66,4 +66,12 @@ public class Employee extends Person {
                 ", salary=" + salary +
                 '}';
     }
+    //csv
+    @Override
+    public String toString() {
+        return super.toString() + "," + idEmployee +
+                "," + level +
+                "," + rankEmployee +
+                "," + salary;
+    }
 }

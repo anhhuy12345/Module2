@@ -85,4 +85,15 @@ public abstract class Facility {
                 ", maxPeople=" + maxPeople +
                 ", rentType='" + rentType + '\'';
     }
+    //dùng cho file CSV
+
+    @Override
+    public String toString() {
+        return idFacility +
+                "," + name +
+                "," + area +
+                "," + cost +
+                "," + maxPeople +
+                "," + rentType;
+    }
 }

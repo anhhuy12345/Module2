@@ -4,11 +4,12 @@ import Case_Study.Model.Customer;
 import Case_Study.Service.CustomerService;
 import Case_Study.Ultil.ReadAndWrite;
 
+
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 
-public class CustomerServiceImpl implements CustomerService {
+public  class CustomerServiceImpl implements CustomerService {
     private static final String PATH = "E:\\Codegym\\Module2.1\\src\\Case_Study\\Data";
 
     //khai báo đọc ghi file CSV
@@ -117,5 +118,10 @@ public class CustomerServiceImpl implements CustomerService {
         if (check) {
             System.out.println("NOT FIND ID!");
         }
+    }
+
+    @Override
+    public void delete() {
+
     }
 }

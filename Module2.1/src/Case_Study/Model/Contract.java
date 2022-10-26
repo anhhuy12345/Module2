@@ -94,4 +94,15 @@ public class Contract {
                 ", startDateFacility='" + startDateFacility + '\'' +
                 ", endDateFacility='" + endDateFacility + '\'';
     }
+    //dùng cho csv
+    @Override
+    public String toString() {
+        return idContract +
+                "," + idBooking +
+                "," + deposit +
+                "," + totalMoney +
+                "," + idCustomer +
+                "," + startDateFacility +
+                "," + endDateFacility;
+    }
 }

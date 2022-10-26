@@ -53,4 +53,13 @@ public class Villa extends Facility {
                 ", numberFloorVilla=" + numberFloorVilla +
                 '}';
     }
+    //dùng cho file CSV
+
+    @Override
+    public String toString() {
+        return super.toString() + "," +
+                standardRoomVilla +
+                "," + areaPool +
+                "," + numberFloorVilla;
+    }
 }

@@ -60,7 +60,7 @@ public abstract class Person {
     }
 
     public int getPhoneNumber() {
-        return phoneNumber;
+       return phoneNumber;
     }
 
     public void setPhoneNumber(int phoneNumber) {
@@ -93,5 +93,16 @@ public abstract class Person {
                 ", phoneNumber=" + phoneNumber +
                 ", email='" + email + '\'' +
                 ", address='" + address + '\'';
+    }
+    //dùng cho file CSV
+    @Override
+    public String toString() {
+        return name
+                + "," + dateOfBirth
+                + "," + sex
+                + "," + id
+                + "," + phoneNumber
+                + "," + email
+                + ", " + address;
     }
 }

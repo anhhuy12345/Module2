@@ -5,6 +5,7 @@ import Case_Study.Service.EmployeeService;
 import Case_Study.Ultil.ReadAndWrite;
 import Case_Study.Ultil.RegexData;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -16,7 +17,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     Scanner scanner = new Scanner(System.in);
 
     //đường link CSV
-    private static final String PATH = "D:\\CodeGym\\Module 2\\src\\CaseStudy\\data\\employee.csv";
+    private static final String PATH = "E:\\Codegym\\Module2.1\\src\\Case_Study\\Data";
 
     //khai báo đọc ghi file CSV
     ReadAndWrite<Employee> employeeReadAndWrite = new ReadAndWrite<>();
@@ -73,7 +74,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     //đọc file CSV để lấy dữ liệu list nhận được
     public List<Employee> getEmployeeList() {
         //đọc file để lấy dữ liệu employee trong file
-        List<String> stringList = employeeReadAndWrite.readFromFile(PATH);
+        List<String> stringList = employeeReadAndWrite.readFromFile(PATH + "\\test.csv");
         //khai báo chuỗi lưu thông tin nhân viên
         List<Employee> employeeList = new ArrayList<>();
         for (String employeeString : stringList) {
@@ -91,34 +92,19 @@ public class EmployeeServiceImpl implements EmployeeService {
         employeeReadAndWrite.writeToFile(employeeList, PATH, "name, dateOfBirth, sex, id, phoneNumber, email, address, idEmployee, level, rank, salary");
     }
 
-
-    @Override
-    public void display() {
-        List<Employee> employeeList = getEmployeeList();
-        //xoá những đối tượng bị null
-        while (employeeList.contains(null)) {
-            employeeList.remove(null);
-        }
-
-        System.out.println("\n----------List Employee----------");
-        for (Employee employee : employeeList) {
-            System.out.println(employee.toStringDisplay());
-        }
-    }
-
     @Override
     public void edit() {
-        List<Employee> employeeList = getEmployeeList();
-        boolean check = true;
+        List<Employee> employeeList1 = getEmployeeList();
+        boolean check1 = true;
         //hiển thị lại danh sách employee
         display();
 
         System.out.print("input id element update: ");
-        String idEmployee = scanner.nextLine();
-        for (int i = 0; i < employeeList.size(); i++) {
-            if (idEmployee.equals(employeeList.get(i).getId())) {
+        String idEmployee1 = scanner.nextLine();
+        for (int i = 0; i < employeeList1.size(); i++) {
+            if (idEmployee1.equals(employeeList1.get(i).getId())) {
                 //xuất lại thông tin cũ
-                System.out.println(employeeList.get(i).toStringDisplay());
+                System.out.println(employeeList1.get(i).toStringDisplay());
 
 //                //nhập lại phần tử bạn muốn update
 //                employeeList.add(i, inputEmployee());
@@ -126,10 +112,44 @@ public class EmployeeServiceImpl implements EmployeeService {
 //                employeeList.remove(i+1);
 
                 //edit lại thông tin
-                employeeList.set(i, inputEmployee());
-                check = false;
+                employeeList1.set(i, inputEmployee());
+                check1 = false;
             }
         }
-
     }
+
+    @Override
+    public void delete() {
+        List<Employee> employeeList = getEmployeeList();
+        boolean check = true;
+        //hiển thị lại danh sách employee
+        display();
+
+        System.out.print("input id you want delete: ");
+        String idEmployee = scanner.nextLine();
+        for (int i = 0; i < employeeList.size(); i++) {
+            if (idEmployee.equals(employeeList.get(i).getId())) {
+                System.out.println("Your id will be permanently removed from the list");
+                System.out.println(employeeList.remove(i));
+            }
+
+
+        }
+    }
+
+    @Override
+    public void display() {
+        List<Employee> employeeList2 = getEmployeeList();
+        //xoá những đối tượng bị null
+        while (employeeList2.contains(null)) {
+            employeeList2.remove(null);
+        }
+
+        System.out.println("\n----------List Employee----------");
+        for (Employee employee : employeeList2) {
+            System.out.println(employee.toStringDisplay());
+        }
+    }
+
+
 }

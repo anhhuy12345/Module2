@@ -7,7 +7,15 @@ import java.util.List;
 
 public class ReadAndWrite<T> {
     public void writeToFile(Collection<T> collection, String path, String inputHeader) {
-        File file = new File(path);
+        File file = new File( "E:\\Codegym\\Module2.1\\src\\Case_Study\\Data\\test.csv");
+
+        if (!file.exists()) {
+            try {
+                file.createNewFile();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
 
         //ghi file
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(file))) {
@@ -30,6 +38,14 @@ public class ReadAndWrite<T> {
     //đọc file
     public List<String> readFromFile(String path) {
         File file = new File(path);
+
+        if (!file.exists()) {
+            try {
+                file.createNewFile();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
         List<String> list = new ArrayList<>();
         try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
             String line = null;

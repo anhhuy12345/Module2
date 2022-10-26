@@ -10,4 +10,7 @@ public interface Service {
     //cập nhật
     void edit();
 
+    //xoá
+    void delete();
+
 }
