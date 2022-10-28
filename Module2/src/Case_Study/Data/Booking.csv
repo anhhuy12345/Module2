@@ -1,0 +1,2 @@
+idBooking,  startDate,  endDate,  name, dateOfBirth, sex, id, phoneNumber, email, address, idCustomer, rankCustomer, facility, , , , , , , , 
+1,12/01/2021,12/02/2021,123,12/12/1996,male,123,12313,123123123,     12,2,1,SVVL-1234,Villa,34.0,123.0,12,month,2,13.0,2
