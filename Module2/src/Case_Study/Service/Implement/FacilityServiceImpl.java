@@ -105,7 +105,7 @@ public class FacilityServiceImpl implements FacilityService {
         //hiển thị danh sách cần bảo trì
         System.out.println("-----LIST Facility need maintenance-----");
         for (Map.Entry<Facility, Integer> element : facilityList.entrySet()) {
-            if (element.getValue() >= 1) { // 5
+            if (element.getValue() >= 5) { // 5
                 System.out.println("Facility: " + element.getKey().toStringDisplay() + " USED " + element.getValue() + " times");
             }
         }

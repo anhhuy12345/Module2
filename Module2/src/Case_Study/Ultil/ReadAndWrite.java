@@ -1,5 +1,7 @@
 package Case_Study.Ultil;
 
+import Case_Study.Model.Booking;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -12,7 +14,7 @@ public class ReadAndWrite<T> {
     }
 
     public void writeToFile(Collection<T> collection, String path, String inputHeader, boolean append) {
-        File file= new File( path);
+        File file = new File(path);
 
         if (!file.exists()) {
             try {
@@ -57,7 +59,7 @@ public class ReadAndWrite<T> {
 
             //bỏ qua HEADER
             line = reader.readLine();
-            while ((line = reader.readLine())!=null) {
+            while ((line = reader.readLine()) != null) {
                 //tạo mảng chứa các phần tử của list ngăn cách bởi dấu ","
                 //phần này ai gọi hàm này thì xử lí
                 list.add(line);
@@ -69,4 +71,5 @@ public class ReadAndWrite<T> {
         //return về list String, ai gọi hàm sẽ xử lí phần xuất đối tượng
         return list;
     }
+
 }

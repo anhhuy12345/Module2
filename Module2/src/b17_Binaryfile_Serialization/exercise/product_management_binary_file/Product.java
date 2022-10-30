@@ -15,17 +15,21 @@ public class Product implements Serializable {
     private String nameProduct;
     private String nameCompany;
     private double cost;
+    private String another;
 
     //constructor
+
+
 
     public Product() {
     }
 
-    public Product(String id, String nameProduct, String nameCompany, double cost) {
+    public Product(String id, String nameProduct, String nameCompany, double cost, String another) {
         this.id = id;
         this.nameProduct = nameProduct;
         this.nameCompany = nameCompany;
         this.cost = cost;
+        this.another = another;
     }
 
     // setter getter
@@ -62,6 +66,14 @@ public class Product implements Serializable {
         this.cost = cost;
     }
 
+    public String getAnother() {
+        return another;
+    }
+
+    public void setAnother(String another) {
+        this.another = another;
+    }
+
     @Override
     public String toString() {
         return "Product{" +
@@ -69,6 +81,7 @@ public class Product implements Serializable {
                 ", nameProduct='" + nameProduct + '\'' +
                 ", nameCompany='" + nameCompany + '\'' +
                 ", cost=" + cost +
+                ", another= "+ another + '\'' +
                 '}';
     }
 }

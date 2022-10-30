@@ -5,9 +5,12 @@ import Case_Study.Model.*;
 import Case_Study.Service.BookingService;
 import Case_Study.Ultil.BookingComparator;
 import Case_Study.Ultil.ReadAndWrite;
+import b16_IO_Text_File.exercise.read_file_csv.Nation;
 
+import java.io.*;
 import java.util.*;
-import java.util.stream.Collector;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
 public class BookingServiceImpl implements BookingService {
@@ -38,6 +41,20 @@ public class BookingServiceImpl implements BookingService {
 
 
     static Scanner scanner = new Scanner(System.in);
+
+    public BookingServiceImpl() {
+        super();
+    }
+
+    @Override
+    public void edit() {
+
+    }
+
+    @Override
+    public void delete() {
+
+    }
 
     //xuất list booking set để chuyển thành Queue bên hợp đồng
     public Set<Booking> bookingListSetToQueue() {
@@ -131,7 +148,7 @@ public class BookingServiceImpl implements BookingService {
     public void addNew() {
         //xét id booking, bắt đầu từ 1
         int idBooking = 1;
-        //kiểm tra list booing có trống hay không
+        //kiểm tra list booking có trống hay không
         if (!bookingListSet.isEmpty()) {
             idBooking = bookingListSet.size() + 1;
         }
@@ -206,21 +223,46 @@ public class BookingServiceImpl implements BookingService {
     //đọc file-> chuyển thành mảng->xuất mảng
     @Override
     public void display() {
-        for (Booking booking : bookingListSet) {
-            System.out.println(booking.toStringDisplay());
+        //đọc và xuất file ra hiển thị phòng, ngày, tên người book phòng
+        File file = new File("E:\\Codegym\\Module2\\src\\Case_Study\\Data\\Booking.csv");
+        BufferedInputStream bis = null;
+        FileInputStream  fis= null;
+
+        try
+        {
+            fis = new FileInputStream(file);
+
+            bis = new BufferedInputStream(fis);
+
+            while( bis.available() > 0 ){
+                System.out.print((char)bis.read());
+            }
+
+        }catch(FileNotFoundException fnfe)
+        {
+            System.out.println("The specified file not found" + fnfe);
         }
-//        bookingReadAndWrite.readFromFile(PATH);
+        catch(IOException ioe)
+        {
+            System.out.println("I/O Exception: " + ioe);
+        }
+        finally
+        {
+            try{
+                if(bis != null && fis!=null)
+                {
+                    fis.close();
+                    bis.close();
+                }
+            }catch(IOException ioe)
+            {
+                System.out.println("Error in InputStream close(): " + ioe);
+            }
+        }
     }
 
-    @Override
-    public void edit() {
 
-    }
-
-    @Override
-    public void delete() {
-
-    }
 }
+
 
 

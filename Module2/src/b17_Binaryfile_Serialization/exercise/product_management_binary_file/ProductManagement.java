@@ -43,7 +43,10 @@ public class ProductManagement {
         System.out.print("Enter cost: ");
         double cost = Double.parseDouble(scanner.nextLine());
 
-        return new Product(id, nameProduct, nameCompany, cost);
+        System.out.println("Enter another: ");
+        String another = scanner.nextLine();
+
+        return new Product(id, nameProduct, nameCompany, cost, another );
     }
 
     //thêm product

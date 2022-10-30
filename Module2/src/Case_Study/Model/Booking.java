@@ -20,6 +20,9 @@ public class Booking {
         this.facility = facility;
     }
 
+    public Booking(int idBooking, String startDate, String endDay, String name, String dateOfBirth, String sex, int id, int phoneNumber, String adress, String idCustomer, String rank, String facility) {
+    }
+
     //getter setter
 
     public int getIdBooking() {
