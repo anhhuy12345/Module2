@@ -69,7 +69,7 @@ public class BookingServiceImpl implements BookingService {
         return bookingListSetBuffer;
     }
 
-    //xuất danh sách booking(lịch sử booking)
+//    xuất danh sách booking(lịch sử booking)
     public Set<Booking> getBookingList() {
         return bookingListSet;
     }
@@ -224,7 +224,7 @@ public class BookingServiceImpl implements BookingService {
     @Override
     public void display() {
         //đọc và xuất file ra hiển thị phòng, ngày, tên người book phòng
-        File file = new File("E:\\Codegym\\Module2\\src\\Case_Study\\Data\\Booking.csv");
+        File file = new File(PATH);
         BufferedInputStream bis = null;
         FileInputStream  fis= null;
 

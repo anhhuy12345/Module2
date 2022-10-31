@@ -11,6 +11,14 @@ public class Booking {
 
     public Booking() {
     }
+    public Booking(int idBooking, String startDate, String endDate) {
+        this.idBooking = idBooking;
+        this.startDate = startDate;
+        this.endDate = endDate;
+
+    }
+
+
 
     public Booking(int idBooking, String startDate, String endDate, Customer customer, Facility facility) {
         this.idBooking = idBooking;

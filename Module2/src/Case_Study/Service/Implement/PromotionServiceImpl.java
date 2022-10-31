@@ -4,39 +4,50 @@ package Case_Study.Service.Implement;
 import Case_Study.Model.Booking;
 import Case_Study.Service.PromotionService;
 import Case_Study.Ultil.BookingComparator;
+import Case_Study.Ultil.ReadAndWrite;
 
-import java.util.Scanner;
-import java.util.Set;
-import java.util.Stack;
-import java.util.TreeSet;
+import java.util.*;
 
 public class PromotionServiceImpl implements PromotionService {
+    static ReadAndWrite<Booking> bookingReadAndWrite = new ReadAndWrite<>();
     static Scanner scanner = new Scanner(System.in);
 
     //tạo list danh sách chứa các booking có cùng năm(năm là người dùng nhập vào)
     static Set<Booking> bookingListYear = new TreeSet<>(new BookingComparator());
-
+    public  Set<Booking> getBookingListYear(){
+        Set<Booking> bookings = new LinkedHashSet<>();
+        List<String> stringList = bookingReadAndWrite.readFromFile("E:\\Codegym\\Module2\\src\\Case_Study\\Data\\Booking.csv");
+        for (String string : stringList) {
+            //cắt thành chuỗi
+            String[] bookingArray = string.split(",");
+            bookings.add(new Booking(Integer.parseInt(bookingArray[0]), bookingArray[1], bookingArray[2]));
+        }
+        return bookings;
+    }
     @Override
     public void displayCustomerListUseServiceInYear() {
         //lây dữ liệu từ danh sách booking
-        Set<Booking> bookings = new BookingServiceImpl().getBookingList();
+       // Set<Booking> bookings = new BookingServiceImpl().getBookingList();
+
 
         System.out.print("Enter display list YEAR: ");
         String year = scanner.nextLine();
 
         //tiến hành kiểm tra và hiển thị list có cùng năm
-        for (Booking booking : bookings) {
+        Set<Booking> listBookingsFromDatabase = getBookingListYear();
+        Set<Booking> resultBookingsFromSearch = new HashSet<>();
+        for (Booking booking : listBookingsFromDatabase) {
             // dd/MM/yyyy
             String[] yearStart = booking.getStartDate().split("/");
             String[] yearEnd = booking.getEndDate().split("/");
             if (yearStart[2].equals(year) && yearEnd[2].equals(year)) {
-                bookingListYear.add(booking);
+                resultBookingsFromSearch.add(booking);
             }
         }
 
         //hiển thị danh sách Booking sử dụng cùng năm
         System.out.println("----------List Booking in " + year + "YEAR----------");
-        for (Booking bookingYear : bookingListYear) {
+        for (Booking bookingYear : resultBookingsFromSearch) {
             System.out.println(bookingYear.toStringDisplay());
         }
     }
@@ -55,12 +66,12 @@ public class PromotionServiceImpl implements PromotionService {
         Stack<Booking> bookingVoucherStackList = new Stack<>();
 
         //đầu tiên kiểm tra danh sách theo năm có trống hay không
-        if (bookingListYear.isEmpty()) {
+        if (getBookingListYear().isEmpty()) {
             return;
         }
 
         //chuyển TreeSet qua Stack
-        for (Booking booking : bookingListYear) {
+        for (Booking booking : getBookingListYear()) {
             bookingVoucherStackList.push(booking);
         }
 
