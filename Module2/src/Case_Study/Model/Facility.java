@@ -13,10 +13,10 @@ public abstract class Facility {
 
     //constructor
 
-    public Facility() {
+    protected Facility() {
     }
 
-    public Facility(String idFacility, String name, double area, double cost, int maxPeople, String rentType) {
+    protected Facility(String idFacility, String name, double area, double cost, int maxPeople, String rentType) {
         this.idFacility = idFacility;
         this.name = name;
         this.area = area;

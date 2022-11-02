@@ -27,7 +27,6 @@ public class PromotionServiceImpl implements PromotionService {
     @Override
     public void displayCustomerListUseServiceInYear() {
         //lây dữ liệu từ danh sách booking
-       // Set<Booking> bookings = new BookingServiceImpl().getBookingList();
 
 
         System.out.print("Enter display list YEAR: ");

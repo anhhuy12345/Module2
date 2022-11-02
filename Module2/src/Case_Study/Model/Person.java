@@ -12,10 +12,10 @@ public abstract class Person {
 
     //constructor
 
-    public Person() {
+    protected Person() {
     }
 
-    public Person(String name, String dateOfBirth, String sex, String id, int phoneNumber, String email, String address) {
+    protected Person(String name, String dateOfBirth, String sex, String id, int phoneNumber, String email, String address) {
         this.name = name;
         this.dateOfBirth = dateOfBirth;
         this.sex = sex;
@@ -60,7 +60,7 @@ public abstract class Person {
     }
 
     public int getPhoneNumber() {
-       return phoneNumber;
+        return phoneNumber;
     }
 
     public void setPhoneNumber(int phoneNumber) {
@@ -94,6 +94,7 @@ public abstract class Person {
                 ", email='" + email + '\'' +
                 ", address='" + address + '\'';
     }
+
     //dùng cho file CSV
     @Override
     public String toString() {

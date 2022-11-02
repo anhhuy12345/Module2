@@ -9,7 +9,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 
-public  class CustomerServiceImpl implements CustomerService {
+public class CustomerServiceImpl implements CustomerService {
     private static final String PATH = "E:\\Codegym\\Module2\\src\\Case_Study\\Data\\Customer.csv";
 
     //khai báo đọc ghi file CSV

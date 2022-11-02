@@ -17,7 +17,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     Scanner scanner = new Scanner(System.in);
 
     //đường link CSV
-    private static final String PATH ="E:\\Codegym\\Module2\\src\\Case_Study\\Data\\employee.csv";
+    private static final String PATH = "E:\\Codegym\\Module2\\src\\Case_Study\\Data\\employee.csv";
 
     //khai báo đọc ghi file CSV
     ReadAndWrite<Employee> employeeReadAndWrite = new ReadAndWrite<>();
@@ -105,13 +105,6 @@ public class EmployeeServiceImpl implements EmployeeService {
             if (idEmployee1.equals(employeeList1.get(i).getId())) {
                 //xuất lại thông tin cũ
                 System.out.println(employeeList1.get(i).toStringDisplay());
-
-//                //nhập lại phần tử bạn muốn update
-//                employeeList.add(i, inputEmployee());
-//                //xoá phần tử tại vị trí index, vì sau khi thêm phần tử vào, thì phần tử cũ sẽ được đẩy lên index+1
-//                employeeList.remove(i+1);
-
-                //edit lại thông tin
                 employeeList1.set(i, inputEmployee());
                 check1 = false;
             }

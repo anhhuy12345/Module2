@@ -32,7 +32,6 @@ public class FacilityServiceImpl implements FacilityService {
     //Khởi tạo list Hasp Map lưu trữ cơ sở
     // Key: cơ sở nào
     // value: số lần sử dụng
-//    static Map<Facility, Integer> facilityList = new LinkedHashMap<>();
     private Scanner scanner = new Scanner(System.in);
 
     //đường link CSV và HEADER
@@ -44,21 +43,6 @@ public class FacilityServiceImpl implements FacilityService {
     //khai báo đọc ghi file CSV
     ReadAndWrite<String> roomReadAndWrite = new ReadAndWrite<>();
     ReadAndWrite<String> villaReadAndWrite = new ReadAndWrite<>();
-
-    //
-//    static {
-//        List<String> stringList = new ArrayList<>();
-//        //dữ liệu dịch vụ
-//        facilityList.put(new Villa("001", "Villa 1", 10.5, 111111, 500, "FullDay", "5 sao", 5, 50), 0);
-//        facilityList.put(new Villa("002", "Villa 2", 20.5, 222222, 600, "PartDay", "4 sao", 6, 100), 0);
-//        facilityList.put(new Villa("003", "Villa 3", 30.5, 333333, 700, "FullDay", "3 sao", 7, 150), 0);
-//        for (Map.Entry<Facility, Integer> element : facilityList.entrySet()) {
-//            stringList.add(element.getKey().toString() + "," + element.getValue().toString());
-//        }
-//
-//        VillaReadAndWrite.writeToFile(stringList, PATH_VILLA, HEADER_VILLA);
-//    }
-
 
     //đọc file để lấy list ROOM
     public Map<Room, Integer> getListRoom() {

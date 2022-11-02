@@ -5,7 +5,6 @@ import Case_Study.Model.*;
 import Case_Study.Service.BookingService;
 import Case_Study.Ultil.BookingComparator;
 import Case_Study.Ultil.ReadAndWrite;
-import b16_IO_Text_File.exercise.read_file_csv.Nation;
 
 import java.io.*;
 import java.util.*;
@@ -69,7 +68,7 @@ public class BookingServiceImpl implements BookingService {
         return bookingListSetBuffer;
     }
 
-//    xuất danh sách booking(lịch sử booking)
+    //    xuất danh sách booking(lịch sử booking)
     public Set<Booking> getBookingList() {
         return bookingListSet;
     }
@@ -123,24 +122,6 @@ public class BookingServiceImpl implements BookingService {
             if (idFacility != null) return idFacility;
         } while (true);
 
-//        while (true) {
-//            //nếu họ nhập STOP thì dừng tìm kiếm và trả lại null
-////            if (idFacility.equals("STOP")) {
-////                return null;
-////            }
-//
-//            //kiểm tra xem có id trong list không
-//            for (Map.Entry<Facility, Integer> facility : serviceList.entrySet()) {
-//                if (idFacility.equals(facility.getKey().getIdFacility())) {
-//                    //mỗi lần sử dụng dịch vụ thì số lần sử dụng tăng lên 1
-//                    serviceList.put(facility.getKey(), facility.getValue() + 1);
-//                    return facility.getKey();
-//                }
-//            }
-//            //nếu nhập sai thì bắt người dùng nhập lại
-//            System.out.print("Not Found ID Facility, Please re-input ID Facility: ");
-//            idFacility = scanner.nextLine();
-//        }
     }
 
     //thêm mới booking
@@ -226,36 +207,28 @@ public class BookingServiceImpl implements BookingService {
         //đọc và xuất file ra hiển thị phòng, ngày, tên người book phòng
         File file = new File(PATH);
         BufferedInputStream bis = null;
-        FileInputStream  fis= null;
+        FileInputStream fis = null;
 
-        try
-        {
+        try {
             fis = new FileInputStream(file);
 
             bis = new BufferedInputStream(fis);
 
-            while( bis.available() > 0 ){
-                System.out.print((char)bis.read());
+            while (bis.available() > 0) {
+                System.out.print((char) bis.read());
             }
 
-        }catch(FileNotFoundException fnfe)
-        {
+        } catch (FileNotFoundException fnfe) {
             System.out.println("The specified file not found" + fnfe);
-        }
-        catch(IOException ioe)
-        {
+        } catch (IOException ioe) {
             System.out.println("I/O Exception: " + ioe);
-        }
-        finally
-        {
-            try{
-                if(bis != null && fis!=null)
-                {
+        } finally {
+            try {
+                if (bis != null && fis != null) {
                     fis.close();
                     bis.close();
                 }
-            }catch(IOException ioe)
-            {
+            } catch (IOException ioe) {
                 System.out.println("Error in InputStream close(): " + ioe);
             }
         }

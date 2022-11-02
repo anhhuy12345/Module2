@@ -5,18 +5,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ReadAndWriteFileCSV {
-    //vì file csv ngăn cách bằng dấu "," nên tạo một CONST là dấu "," cho dễ sử dụng
-    final String SPACE = ",";
+    //vì file csv ngăn cách bằng dấu "," nên tạo một COMMA là dấu "," cho dễ sử dụng
+    final String COMMA = ",";
 
     //ghi file CSV
     public void writeListNation(String path, List<Nation> list) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(path));) {
             //header
-            writer.write("ID" + SPACE + "CODE" + SPACE + "NAME");
+            writer.write("ID" + COMMA + "CODE" + COMMA + "NAME");
             for (Nation nation : list) {
                 //xuống dòng
                 writer.newLine();
-                writer.write(nation.getId() + SPACE + nation.getCode() + SPACE + nation.getName());
+                writer.write(nation.getId() + COMMA + nation.getCode() + COMMA + nation.getName());
 //                writer.flush(); //đẩy từng dòng vào file(dùng khi dự án lớn)
             }
         } catch (IOException e) {

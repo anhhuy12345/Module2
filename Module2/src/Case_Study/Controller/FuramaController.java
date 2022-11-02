@@ -58,6 +58,9 @@ public class FuramaController {
                 case 6:
                     System.exit(0);
                     break;
+                default:
+                    System.out.println(" Wrong number.Please re-input!!!!");
+                    break;
             }
         }
     }
@@ -99,6 +102,9 @@ public class FuramaController {
                 case 5:
                     mainMenu();
                     break;
+                default:
+                    System.out.println(" Wrong number.Please re-input!!!!");
+                    break;
             }
         }
     }
@@ -136,6 +142,9 @@ public class FuramaController {
                     break;
                 case 4:
                     mainMenu();
+                    break;
+                default:
+                    System.out.println(" Wrong number.Please re-input!!!!");
                     break;
             }
         }
@@ -188,8 +197,7 @@ public class FuramaController {
                                 facilityList.addNewRoom();
                                 break;
                             case 3:
-                                displayFacilityMenu();
-                                break;
+                                return;
                         }
                     }
                 case 3:
@@ -198,13 +206,15 @@ public class FuramaController {
                 case 4:
                     mainMenu();
                     break;
+                default:
+                    System.out.println(" Wrong number.Please re-input!!!!");
+                    break;
             }
         }
     }
 
     public static void displayBookingMenu() {
         Service bookingList = new BookingServiceImpl();
-        Service contractList = new ContractServiceImpl();
         boolean check = true;
         while (check) {
             System.out.println("\n----------Booking Menu----------");
@@ -231,6 +241,9 @@ public class FuramaController {
                     break;
                 case 3:
                     mainMenu();
+                    break;
+                default:
+                    System.out.println(" Wrong number.Please re-input!!!!");
                     break;
             }
         }
@@ -264,6 +277,9 @@ public class FuramaController {
                     break;
                 case 3:
                     mainMenu();
+                    break;
+                default:
+                    System.out.println(" Wrong number.Please re-input!!!!");
                     break;
             }
         }
