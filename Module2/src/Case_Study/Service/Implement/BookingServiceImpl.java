@@ -204,36 +204,39 @@ public class BookingServiceImpl implements BookingService {
     //đọc file-> chuyển thành mảng->xuất mảng
     @Override
     public void display() {
-        //đọc và xuất file ra hiển thị phòng, ngày, tên người book phòng
-        File file = new File(PATH);
-        BufferedInputStream bis = null;
-        FileInputStream fis = null;
+        if (getBookingList().size() == 0) {
+            System.out.println("No data!!!!");
+        } else {
+            //đọc và xuất file ra hiển thị phòng, ngày, tên người book phòng
+            File file = new File(PATH);
+            BufferedInputStream bis = null;
+            FileInputStream fis = null;
 
-        try {
-            fis = new FileInputStream(file);
-
-            bis = new BufferedInputStream(fis);
-
-            while (bis.available() > 0) {
-                System.out.print((char) bis.read());
-            }
-
-        } catch (FileNotFoundException fnfe) {
-            System.out.println("The specified file not found" + fnfe);
-        } catch (IOException ioe) {
-            System.out.println("I/O Exception: " + ioe);
-        } finally {
             try {
-                if (bis != null && fis != null) {
-                    fis.close();
-                    bis.close();
+                fis = new FileInputStream(file);
+
+                bis = new BufferedInputStream(fis);
+
+                while (bis.available() > 0) {
+                    System.out.print((char) bis.read());
                 }
+
+            } catch (FileNotFoundException fnfe) {
+                System.out.println("The specified file not found" + fnfe);
             } catch (IOException ioe) {
-                System.out.println("Error in InputStream close(): " + ioe);
+                System.out.println("I/O Exception: " + ioe);
+            } finally {
+                try {
+                    if (bis != null && fis != null) {
+                        fis.close();
+                        bis.close();
+                    }
+                } catch (IOException ioe) {
+                    System.out.println("Error in InputStream close(): " + ioe);
+                }
             }
         }
     }
-
 
 }
 

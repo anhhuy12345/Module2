@@ -84,14 +84,18 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     public void display() {
         LinkedList<Customer> customerLinkedList = getListCustomer();
-        //xoá những đối tượng bị null
-        while (customerLinkedList.contains(null)) {
-            customerLinkedList.remove(null);
-        }
+        if(getListCustomer().size()==0){
+            System.out.println("No data!!!!");
+        }else {
+            //xoá những đối tượng bị null
+            while (customerLinkedList.contains(null)) {
+                customerLinkedList.remove(null);
+            }
 
-        System.out.println("\n----------List Customer----------");
-        for (Customer customer : customerLinkedList) {
-            System.out.println(customer.toStringDisplay());
+            System.out.println("\n----------List Customer----------");
+            for (Customer customer : customerLinkedList) {
+                System.out.println(customer.toStringDisplay());
+            }
         }
     }
 
@@ -99,24 +103,28 @@ public class CustomerServiceImpl implements CustomerService {
     public void edit() {
         LinkedList<Customer> customerLinkedList = getListCustomer();
         boolean check = true;
-        //hiển thị lại list Customer
-        display();
+        if (getListCustomer().size()== 0) {
+            System.out.println("No data!!!!");
+        } else {
+            //hiển thị lại list Customer
+            display();
 
-        System.out.print("input id element update: ");
-        String idCustomer = scanner.nextLine();
-        for (int i = 0; i < customerLinkedList.size(); i++) {
-            if (idCustomer.equals(customerLinkedList.get(i).getId())) {
-                //xuất lại thông tin cũ
-                System.out.println(customerLinkedList.get(i).toStringDisplay());
-                //edit lại thông tin
-                customerLinkedList.set(i, inputCustomer());
-                check = false;
+            System.out.print("input id element update: ");
+            String idCustomer = scanner.nextLine();
+            for (int i = 0; i < customerLinkedList.size(); i++) {
+                if (idCustomer.equals(customerLinkedList.get(i).getId())) {
+                    //xuất lại thông tin cũ
+                    System.out.println(customerLinkedList.get(i).toStringDisplay());
+                    //edit lại thông tin
+                    customerLinkedList.set(i, inputCustomer());
+                    check = false;
+                }
             }
-        }
-        //ghi vào file
-        customerReadAndWrite.writeToFile(customerLinkedList, PATH, "name, dateOfBirth, sex, id, phoneNumber, email, address, idCustomer, rankCustomer");
-        if (check) {
-            System.out.println("NOT FIND ID!");
+            //ghi vào file
+            customerReadAndWrite.writeToFile(customerLinkedList, PATH, "name, dateOfBirth, sex, id, phoneNumber, email, address, idCustomer, rankCustomer");
+            if (check) {
+                System.out.println("NOT FIND ID!");
+            }
         }
     }
 

@@ -96,17 +96,22 @@ public class EmployeeServiceImpl implements EmployeeService {
     public void edit() {
         List<Employee> employeeList1 = getEmployeeList();
         boolean check1 = true;
-        //hiển thị lại danh sách employee
-        display();
+        if(getEmployeeList().size() == 0){
+            System.out.println("No data!!!!");
+        }else {
+//            boolean check1 = true;
+            //hiển thị lại danh sách employe
+            display();
 
-        System.out.print("input id element update: ");
-        String idEmployee1 = scanner.nextLine();
-        for (int i = 0; i < employeeList1.size(); i++) {
-            if (idEmployee1.equals(employeeList1.get(i).getId())) {
-                //xuất lại thông tin cũ
-                System.out.println(employeeList1.get(i).toStringDisplay());
-                employeeList1.set(i, inputEmployee());
-                check1 = false;
+            System.out.print("input id element update: ");
+            String idEmployee1 = scanner.nextLine();
+            for (int i = 0; i < employeeList1.size(); i++) {
+                if (idEmployee1.equals(employeeList1.get(i).getId())) {
+                    //xuất lại thông tin cũ
+                    System.out.println(employeeList1.get(i).toStringDisplay());
+                    employeeList1.set(i, inputEmployee());
+                    check1 = false;
+                }
             }
         }
     }
@@ -114,18 +119,23 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Override
     public void delete() {
         List<Employee> employeeList = getEmployeeList();
-        boolean check = true;
-        //hiển thị lại danh sách employee
-        display();
 
-        System.out.print("input id you want delete: ");
-        String idEmployee = scanner.nextLine();
-        for (int i = 0; i < employeeList.size(); i++) {
-            if (idEmployee.equals(employeeList.get(i).getId())) {
-                System.out.println("Your id will be permanently removed from the list");
-                System.out.println(employeeList.remove(i));
-                this.employeeReadAndWrite.writeToFile(employeeList, PATH, INPUT_HEADERS, false);
-                return;
+        if(getEmployeeList().size() == 0){
+            System.out.println("No data!!!!");
+        }else {
+            boolean check = true;
+            //hiển thị lại danh sách employee
+            display();
+
+            System.out.print("input id you want delete: ");
+            String idEmployee = scanner.nextLine();
+            for (int i = 0; i < employeeList.size(); i++) {
+                if (idEmployee.equals(employeeList.get(i).getId())) {
+                    System.out.println("Your id will be permanently removed from the list");
+                    System.out.println(employeeList.remove(i));
+                    this.employeeReadAndWrite.writeToFile(employeeList, PATH, INPUT_HEADERS, false);
+                    return;
+                }
             }
         }
     }
@@ -133,16 +143,18 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Override
     public void display() {
         List<Employee> employeeList2 = getEmployeeList();
-        //xoá những đối tượng bị null
-        while (employeeList2.contains(null)) {
-            employeeList2.remove(null);
-        }
+        if (getEmployeeList().size() == 0) {
+            System.out.println("No data!!!!");
+        } else {
+            //xoá những đối tượng bị null
+            while (employeeList2.contains(null)) {
+                employeeList2.remove(null);
+            }
 
-        System.out.println("\n----------List Employee----------");
-        for (Employee employee : employeeList2) {
-            System.out.println(employee.toStringDisplay());
+            System.out.println("\n----------List Employee----------");
+            for (Employee employee : employeeList2) {
+                System.out.println(employee.toStringDisplay());
+            }
         }
     }
-
-
 }

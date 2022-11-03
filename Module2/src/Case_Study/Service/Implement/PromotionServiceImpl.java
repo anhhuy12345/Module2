@@ -27,27 +27,29 @@ public class PromotionServiceImpl implements PromotionService {
     @Override
     public void displayCustomerListUseServiceInYear() {
         //lây dữ liệu từ danh sách booking
+            System.out.print("Enter display list YEAR: ");
+            String year = scanner.nextLine();
 
-
-        System.out.print("Enter display list YEAR: ");
-        String year = scanner.nextLine();
-
-        //tiến hành kiểm tra và hiển thị list có cùng năm
-        Set<Booking> listBookingsFromDatabase = getBookingListYear();
-        Set<Booking> resultBookingsFromSearch = new HashSet<>();
-        for (Booking booking : listBookingsFromDatabase) {
-            // dd/MM/yyyy
-            String[] yearStart = booking.getStartDate().split("/");
-            String[] yearEnd = booking.getEndDate().split("/");
-            if (yearStart[2].equals(year) && yearEnd[2].equals(year)) {
-                resultBookingsFromSearch.add(booking);
+            //tiến hành kiểm tra và hiển thị list có cùng năm
+            Set<Booking> listBookingsFromDatabase = getBookingListYear();
+            Set<Booking> resultBookingsFromSearch = new HashSet<>();
+        if (getBookingListYear().size() == 0) {
+            System.out.println("No data!!!!");
+        } else {
+            for (Booking booking : listBookingsFromDatabase) {
+                // dd/MM/yyyy
+                String[] yearStart = booking.getStartDate().split("/");
+                String[] yearEnd = booking.getEndDate().split("/");
+                if (yearStart[2].equals(year) && yearEnd[2].equals(year)) {
+                    resultBookingsFromSearch.add(booking);
+                }
             }
-        }
 
-        //hiển thị danh sách Booking sử dụng cùng năm
-        System.out.println("----------List Booking in " + year + "YEAR----------");
-        for (Booking bookingYear : resultBookingsFromSearch) {
-            System.out.println(bookingYear.toStringDisplay());
+            //hiển thị danh sách Booking sử dụng cùng năm
+            System.out.println("----------List Booking in " + year + "YEAR----------");
+            for (Booking bookingYear : resultBookingsFromSearch) {
+                System.out.println(bookingYear.toStringDisplay());
+            }
         }
     }
 
@@ -66,6 +68,7 @@ public class PromotionServiceImpl implements PromotionService {
 
         //đầu tiên kiểm tra danh sách theo năm có trống hay không
         if (getBookingListYear().isEmpty()) {
+            System.out.println("No data!!!");
             return;
         }
 
