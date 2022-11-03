@@ -204,9 +204,6 @@ public class BookingServiceImpl implements BookingService {
     //đọc file-> chuyển thành mảng->xuất mảng
     @Override
     public void display() {
-        if (getBookingList().size() == 0) {
-            System.out.println("No data!!!!");
-        } else {
             //đọc và xuất file ra hiển thị phòng, ngày, tên người book phòng
             File file = new File(PATH);
             BufferedInputStream bis = null;
@@ -236,7 +233,6 @@ public class BookingServiceImpl implements BookingService {
                 }
             }
         }
-    }
 
 }
 
