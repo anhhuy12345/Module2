@@ -90,15 +90,11 @@ public class FacilityServiceImpl implements FacilityService {
     @Override
     public void displayMaintenance() {
         Map<Facility, Integer> facilityList = getListFacility();
-        if (getListFacility().size() == 0) {
-            System.out.println("No data!!!!");
-        } else {
-            //hiển thị danh sách cần bảo trì
-            System.out.println("-----LIST Facility need maintenance-----");
-            for (Map.Entry<Facility, Integer> element : facilityList.entrySet()) {
-                if (element.getValue() >= 5) { // 5
-                    System.out.println("Facility: " + element.getKey().toStringDisplay() + " USED " + element.getValue() + " times");
-                }
+        //hiển thị danh sách cần bảo trì
+        System.out.println("-----LIST Facility need maintenance-----");
+        for (Map.Entry<Facility, Integer> element : facilityList.entrySet()) {
+            if (element.getValue() >= 5) { // 5
+                System.out.println("Facility: " + element.getKey().toStringDisplay() + " USED " + element.getValue() + " times");
             }
         }
     }

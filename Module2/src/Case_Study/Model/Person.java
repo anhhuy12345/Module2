@@ -1,7 +1,7 @@
 package Case_Study.Model;
 
 public abstract class Person {
-    private String name;
+    public String name;
     private String dateOfBirth;   //ngày sinh
     private String sex;
     private String id; //CMND

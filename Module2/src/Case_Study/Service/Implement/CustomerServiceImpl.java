@@ -1,6 +1,7 @@
 package Case_Study.Service.Implement;
 
 import Case_Study.Model.Customer;
+import Case_Study.Model.Employee;
 import Case_Study.Service.CustomerService;
 import Case_Study.Ultil.ReadAndWrite;
 
@@ -11,6 +12,7 @@ import java.util.Scanner;
 
 public class CustomerServiceImpl implements CustomerService {
     private static final String PATH = "E:\\Codegym\\Module2\\src\\Case_Study\\Data\\Customer.csv";
+    private static final String INPUT_HEADERS ="name, dateOfBirth, sex, id, phoneNumber, email, address, idCustomer, rankCustomer" ;
 
     //khai báo đọc ghi file CSV
     ReadAndWrite<Customer> customerReadAndWrite = new ReadAndWrite<>();
@@ -77,7 +79,7 @@ public class CustomerServiceImpl implements CustomerService {
         LinkedList<Customer> customerLinkedList = getListCustomer();
         customerLinkedList.add(inputCustomer());
         //ghi vào file
-        customerReadAndWrite.writeToFile(customerLinkedList, PATH, "name, dateOfBirth, sex, id, phoneNumber, email, address, idCustomer, rankCustomer");
+        customerReadAndWrite.writeToFile(customerLinkedList, PATH, INPUT_HEADERS);
 
     }
 
@@ -130,6 +132,26 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public void delete() {
+        List<Customer> customerList = getListCustomer();
+
+        if(getListCustomer().size() == 0){
+            System.out.println("No data!!!!");
+        }else {
+            boolean check = true;
+            //hiển thị lại danh sách employee
+            display();
+
+            System.out.print("input id you want delete: ");
+            String idEmployee = scanner.nextLine();
+            for (int i = 0; i < customerList.size(); i++) {
+                if (idEmployee.equals(customerList.get(i).getId())) {
+                    System.out.println("Your id will be permanently removed from the list");
+                    System.out.println(customerList.remove(i));
+                    this.customerReadAndWrite.writeToFile(customerList, PATH, INPUT_HEADERS, false);
+                    return;
+                }
+            }
+        }
 
     }
 }

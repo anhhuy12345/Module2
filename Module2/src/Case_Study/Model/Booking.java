@@ -7,15 +7,20 @@ public class Booking {
     private Customer customer;
     private Facility facility;
 
-    //constructor
 
-    public Booking() {
-    }
+
+
+    //constructor
 
     public Booking(int idBooking, String startDate, String endDate) {
         this.idBooking = idBooking;
         this.startDate = startDate;
         this.endDate = endDate;
+
+
+
+
+
 
     }
 
@@ -28,10 +33,15 @@ public class Booking {
         this.facility = facility;
     }
 
-    public Booking(int idBooking, String startDate, String endDay, String name, String dateOfBirth, String sex, int id, int phoneNumber, String adress, String idCustomer, String rank, String facility) {
+    public Booking() {
+
     }
 
+
     //getter setter
+
+
+
 
     public int getIdBooking() {
         return idBooking;

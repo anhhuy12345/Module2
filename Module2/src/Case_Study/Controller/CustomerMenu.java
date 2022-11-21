@@ -17,7 +17,8 @@ public class CustomerMenu {
             System.out.println("1.\tDisplay list customers");
             System.out.println("2.\tAdd new customer");
             System.out.println("3.\tEdit customer");
-            System.out.println("4.\tReturn main menu");
+            System.out.println("4. \tDelete customer");
+            System.out.println("5.\tReturn main menu");
             System.out.print("input Customer Menu: ");
 
             //cho choice bằng 0 vì nó không nằm từ 1->6 và chương trình chạy bình thường
@@ -40,6 +41,9 @@ public class CustomerMenu {
                     customerList.edit();
                     break;
                 case 4:
+                    customerList.delete();
+                    break;
+                case 5:
                     MainMenu.mainMenu();
                     break;
                 default:

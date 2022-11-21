@@ -68,7 +68,7 @@ public class PromotionServiceImpl implements PromotionService {
 
         //đầu tiên kiểm tra danh sách theo năm có trống hay không
         if (getBookingListYear().isEmpty()) {
-            System.out.println("No data!!!");
+            System.out.println("\nNo data!!!");
             return;
         }
 
