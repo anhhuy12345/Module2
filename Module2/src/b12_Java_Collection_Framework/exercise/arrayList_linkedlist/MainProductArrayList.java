@@ -15,7 +15,7 @@ public class MainProductArrayList {
             System.out.println("4. display product");
             System.out.println("5. search product");
             System.out.println("6. sort product");
-            System.out.println("7. out menu");
+            System.out.println("7. exit");
             System.out.print("input: ");
             switch (Integer.parseInt(scanner.nextLine())) {
                 case 1:

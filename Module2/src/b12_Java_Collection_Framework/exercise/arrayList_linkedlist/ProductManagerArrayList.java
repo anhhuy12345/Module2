@@ -57,6 +57,8 @@ public class ProductManagerArrayList {
             if (idRemove.equals(product.getIdProduct())) {
                 products.remove(product);
                 check = false;
+                System.out.println("Remove Access!!!");
+                return;
             }
         }
         if(check) {
