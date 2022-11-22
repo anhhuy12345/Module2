@@ -4,10 +4,12 @@ public class VietnamCustomer extends Person {
     private String typeCustomer;
     private String consumptionRate;
 
+
     public VietnamCustomer(String idCustomer, String name, String typeCustomer, String consumptionRate) {
         super(idCustomer, name);
         this.typeCustomer = typeCustomer;
         this.consumptionRate = consumptionRate;
+
     }
 
     public String getTypeCustomer() {

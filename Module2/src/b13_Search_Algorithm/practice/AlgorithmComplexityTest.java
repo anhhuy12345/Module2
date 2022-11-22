@@ -13,7 +13,7 @@ public class AlgorithmComplexityTest {
             int ascii = inputString.charAt(i);
             frequentChar[ascii] += 1;
         }
-        System.out.println(Arrays.toString(frequentChar));
+
         int max = 0;
         char character = 0;
         for (int j = 0; j < 255; j++) {

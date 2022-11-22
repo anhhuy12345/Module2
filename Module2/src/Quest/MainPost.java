@@ -4,11 +4,17 @@ import java.util.*;
 
 public class MainPost {
     public static void main(String[] args) {
-        ArrayList vals = new ArrayList();
-        vals.add(3.5);
-        vals.add(4.5);
-        vals.add(5.5);
-        vals.add( vals.set(0, 2.5) );
-        System.out.println(vals);
+        List listNames = new ArrayList();
+
+        listNames.add("HaiTT");
+
+        listNames.add("TrungDP");
+
+        listNames.add("TienNVT");
+
+
+        String name2 = (String) listNames.get(1);
+
+        System.out.println(name2);
     }
 }

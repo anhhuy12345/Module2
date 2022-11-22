@@ -2,10 +2,15 @@ package Extend_Exercise_Two.Model;
 
 public class InternationalCustomer extends Person {
     private String nationality;
+    private String string;
 
-    public InternationalCustomer(String idCustomer, String name, String nationality) {
+
+    public InternationalCustomer(String idCustomer, String name, String nationality, String string) {
         super(idCustomer, name);
         this.nationality = nationality;
+        this.string = string;
+
+
     }
 
     public String getNationality() {
@@ -18,7 +23,7 @@ public class InternationalCustomer extends Person {
 
     @Override
     public String toString() {
-        return  super.toString() +
-                 nationality ;
+        return super.toString() +
+                nationality;
     }
 }

@@ -3,6 +3,7 @@ package Extend_Exercise_Two.Controler;
 import Extend_Exercise.Controller.*;
 
 
+import Extend_Exercise_Two.Model.Customer;
 import Extend_Exercise_Two.Service.CustomerService;
 import Extend_Exercise_Two.Service.Impl.CustomerServiceImpl;
 import Extend_Exercise_Two.Service.Service;
@@ -37,6 +38,8 @@ public class Test {
                   carList.addNewNN();
                     break;
                 case 3:
+                    carList.display();
+
 
                     break;
                 case 4:

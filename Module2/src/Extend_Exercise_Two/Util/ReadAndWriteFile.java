@@ -7,7 +7,7 @@ import java.util.List;
 
 public class ReadAndWriteFile<T> {
     public void writeToFile(Collection<T> collection, String path, String inputHeader) {
-        this.writeToFile(collection, path, inputHeader, true);
+        this.writeToFile(collection, path, inputHeader, false);
     }
 
 
