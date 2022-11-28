@@ -1,7 +1,6 @@
 package Extend_Exercise_Two.Service.Impl;
 
 
-
 import Extend_Exercise.Model.Car;
 import Extend_Exercise_Two.Model.InternationalCustomer;
 import Extend_Exercise_Two.Model.VietnamCustomer;
@@ -36,7 +35,6 @@ public class CustomerServiceImpl implements CustomerService {
             String consumptionRate = scanner.nextLine();
 
 
-
             return new VietnamCustomer(id, name, type, consumptionRate);
 
         } catch (Exception e) {
@@ -53,7 +51,7 @@ public class CustomerServiceImpl implements CustomerService {
             String name = scanner.nextLine();
             System.out.println("input Nationality: ");
             String nationality = scanner.nextLine();
-            return new InternationalCustomer(id, name, nationality,"");
+            return new InternationalCustomer(id, name, nationality, "");
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -79,7 +77,7 @@ public class CustomerServiceImpl implements CustomerService {
         for (String nnString : stringList) {
             String[] stringProperty = nnString.split(",");
             nnList.add(new InternationalCustomer(stringProperty[0], stringProperty[1],
-                    stringProperty[2],"null".equals(stringProperty[3]) ? null  : stringProperty[3]));
+                    stringProperty[2], "null".equals(stringProperty[3]) ? null : stringProperty[3]));
         }
         return nnList;
     }
@@ -98,19 +96,34 @@ public class CustomerServiceImpl implements CustomerService {
             System.out.println("No data!!!!");
         } else {
 
-            while ( vnList.contains(null)) {
+            while (vnList.contains(null)) {
 
                 vnList.remove(null);
             }
         }
         System.out.println("\n----------List Car----------");
-        for (VietnamCustomer vnCustomer : getVNList()) {
+        for (VietnamCustomer vnCustomer: getVNList()) {
             System.out.println(vnCustomer.toString());
         }
     }
 
     @Override
     public void find() {
+        List<InternationalCustomer> vnList = getNNList();
+        if (getNNList().size() == 0) {
+            System.out.println("No data");
+        } else {
+            display();
+            boolean check = true;
+            System.out.println("Enter the id");
+            String idCustomer = scanner.nextLine();
+            for (int i = 0; i < vnList.size(); i++) {
+                if (idCustomer.equals(vnList.get(i).getIdCustomer())) {
+                    System.out.println(vnList.get(i).toString());
+                }
+
+            }
+        }
 
     }
 
@@ -119,7 +132,7 @@ public class CustomerServiceImpl implements CustomerService {
     public void addNewNN() {
         List<InternationalCustomer> nnList = getNNList();
         nnList.add(inputInternational());
-        nnReadAndWriteFile.writeToFile(nnList, PATHVN,HEADERS);
+        nnReadAndWriteFile.writeToFile(nnList, PATHVN, HEADERS);
     }
 
     @Override

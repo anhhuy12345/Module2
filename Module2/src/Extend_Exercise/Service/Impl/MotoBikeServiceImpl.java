@@ -58,7 +58,9 @@ public class MotoBikeServiceImpl implements MotobikeService {
         List<Motobike> motorList = new ArrayList<>();
         for (String motorString : stringList) {
             String[] stringProperty = motorString.split(",");
-            motorList.add(new Motobike(stringProperty[0], stringProperty[1], stringProperty[2], stringProperty[3], Integer.parseInt(stringProperty[4])));
+            motorList.add(new Motobike(stringProperty[0], stringProperty[1], stringProperty[2]
+                    , stringProperty[3], Integer.parseInt(stringProperty[4])));
+
         }
         return motorList;
     }

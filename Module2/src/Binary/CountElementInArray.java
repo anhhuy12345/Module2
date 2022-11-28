@@ -1,5 +1,6 @@
 package Binary;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class CountElementInArray {
@@ -22,6 +23,8 @@ public class CountElementInArray {
             System.out.print("Nhập phần tử thứ " + i + ": ");
             A[i] = scanner.nextInt();
         }
+        System.out.println(Arrays.toString(A));
+        
         System.out.println("Enter the number: ");
 
         int number = scanner.nextInt();

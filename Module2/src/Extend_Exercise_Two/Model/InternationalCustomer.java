@@ -24,6 +24,6 @@ public class InternationalCustomer extends Person {
     @Override
     public String toString() {
         return super.toString() +
-                nationality;
+                nationality+ ","+ string;
     }
 }
