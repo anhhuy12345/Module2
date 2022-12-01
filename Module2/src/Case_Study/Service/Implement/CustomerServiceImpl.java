@@ -25,7 +25,9 @@ public class CustomerServiceImpl implements CustomerService {
         for (String customerString : stringList) {
             //vì các thuộc tính trong file CSV được ngăn cách bởi dấu ","
             String[] stringProperty = customerString.split(",");
-            customerLinkedList.add(new Customer(stringProperty[0], stringProperty[1], stringProperty[2], stringProperty[3], Integer.parseInt(stringProperty[4]), stringProperty[5], stringProperty[6], stringProperty[7], stringProperty[8]));
+            customerLinkedList.add(new Customer(stringProperty[0], stringProperty[1], stringProperty[2],
+                    stringProperty[3], Integer.parseInt(stringProperty[4]), stringProperty[5],
+                    stringProperty[6], stringProperty[7], stringProperty[8]));
         }
         return customerLinkedList;
     }

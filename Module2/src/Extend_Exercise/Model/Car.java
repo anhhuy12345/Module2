@@ -1,5 +1,7 @@
 package Extend_Exercise.Model;
 
+import java.util.List;
+
 //Inheritance:extends
 public class Car extends Vehicle {
     // Encapsulation: private, getter, setter

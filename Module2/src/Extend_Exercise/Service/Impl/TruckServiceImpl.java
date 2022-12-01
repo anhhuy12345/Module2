@@ -1,6 +1,7 @@
 package Extend_Exercise.Service.Impl;
 
 import Extend_Exercise.Model.Car;
+import Extend_Exercise.Model.MenuFacture;
 import Extend_Exercise.Model.Truck;
 import Extend_Exercise.Service.TruckService;
 import Extend_Exercise.Util.ReadAndWrite;
@@ -25,14 +26,36 @@ public class TruckServiceImpl implements TruckService {
         }
         return truckList;
     }
+    public List<MenuFacture> getFactureList() {
+
+        List<String> stringList = truckReadAndWrite.readFromFile("src\\Extend_Exercise\\Data\\manufacture.csv");
+
+        List<MenuFacture> factures = new ArrayList<>();
+        for (String factureString : stringList) {
+            String[] stringProperty = factureString.split(",");
+            factures.add(new MenuFacture(stringProperty[0], stringProperty[1], stringProperty[2]));
+        }
+        return factures;
+    }
 
     public Truck inputTruck() {
         try {
             System.out.print("input License Plate : ");
             String licenseplate = Regex.regexCar(scanner.nextLine(), REGEX, "ERROR REGEX LISCENSE PLATE");
 
-            System.out.print("input Manu Facture : ");
-            String menufacture = scanner.nextLine();
+            System.out.print("input Menu Facture : ");
+            List<MenuFacture> factures = getFactureList();
+            System.out.println("\n----------Menu Facture----------");
+            for (MenuFacture menuFacture : factures) {
+                System.out.println(menuFacture.toString());
+            }
+            System.out.println();
+            String facture = scanner.nextLine();
+            for (int i = 0; i < factures.size(); i++) {
+                if (facture.equals(factures.get(i).getIdfacture())) {
+                    facture = factures.get(i).getFacture();
+                }
+            }
 
             System.out.print("input year: ");
             String year = scanner.nextLine();
@@ -44,7 +67,7 @@ public class TruckServiceImpl implements TruckService {
             System.out.print("input weight: ");
             int weight = Integer.parseInt(scanner.nextLine());
 
-            return new Truck(licenseplate, menufacture, year, boss, weight);
+            return new Truck(licenseplate, facture, year, boss, weight);
         } catch (NumberFormatException e) {
             System.err.println("Input not Number, Please re-input!");
             e.printStackTrace();

@@ -17,11 +17,6 @@ public class Booking {
         this.startDate = startDate;
         this.endDate = endDate;
 
-
-
-
-
-
     }
 
 

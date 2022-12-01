@@ -2,6 +2,7 @@ package Extend_Exercise.Service.Impl;
 
 
 import Extend_Exercise.Model.Car;
+import Extend_Exercise.Model.MenuFacture;
 import Extend_Exercise.Service.CarService;
 import Extend_Exercise.Util.ReadAndWrite;
 import Extend_Exercise.Util.Regex;
@@ -20,13 +21,36 @@ public class CarServiceImpl implements CarService {
 
     ReadAndWrite<Car> carReadAndWrite = new ReadAndWrite<>();
 
+    public List<MenuFacture> getFactureList() {
+
+        List<String> stringList = carReadAndWrite.readFromFile("src\\Extend_Exercise\\Data\\manufacture.csv");
+
+        List<MenuFacture> factures = new ArrayList<>();
+        for (String factureString : stringList) {
+            String[] stringProperty = factureString.split(",");
+            factures.add(new MenuFacture(stringProperty[0], stringProperty[1], stringProperty[2]));
+        }
+        return factures;
+    }
+
     public Car inputCoachCar() {
         try {
             System.out.print("input License Plate : ");
             String licenseplate = Regex.regexCar(scanner.nextLine(), REGEXCOACH, "ERROR REGEX LISCENSE PLATE");
 
             System.out.print("input Manu Facture : ");
-            String menufacture = scanner.nextLine();
+            List<MenuFacture> factures = getFactureList();
+            System.out.println("\n----------Menu Facture----------");
+            for (MenuFacture menuFacture : factures) {
+                System.out.println(menuFacture.toString());
+            }
+            System.out.println();
+            String facture = scanner.nextLine();
+            for (int i = 0; i < factures.size(); i++) {
+                if (facture.equals(factures.get(i).getIdfacture())) {
+                    facture = factures.get(i).getFacture();
+                }
+            }
 
             System.out.print("input year: ");
             String year = scanner.nextLine();
@@ -41,7 +65,7 @@ public class CarServiceImpl implements CarService {
             System.out.print("input type: ");
             String type = Regex.regexCar(scanner.nextLine(), REGEXCOACH1, "ERROR REGEX TYPE(Coach)");
 
-            return new Car(licenseplate, menufacture, year, boss, seat, type);
+            return new Car(licenseplate, facture, year, boss, seat, type);
         } catch (NumberFormatException e) {
             System.err.println("Input not Number, Please re-input!");
             e.printStackTrace();
@@ -54,8 +78,20 @@ public class CarServiceImpl implements CarService {
             System.out.print("input License Plate : ");
             String licenseplate = Regex.regexCar(scanner.nextLine(), REGEXTRAVELCAR, "ERROR REGEX LISCENSE PLATE");
 
-            System.out.print("input Manu Facture : ");
-            String menufacture = scanner.nextLine();
+            System.out.print("Manu Facture : ");
+            List<MenuFacture> factures = getFactureList();
+            System.out.println("\n----------Menu Facture----------");
+            for (MenuFacture menuFacture : factures) {
+                System.out.println(menuFacture.toString());
+            }
+            System.out.println();
+            String facture = scanner.nextLine();
+            for (int i = 0; i < factures.size(); i++) {
+                if (facture.equals(factures.get(i).getIdfacture())) {
+                    facture = factures.get(i).getFacture();
+                }
+            }
+
 
             System.out.print("input year: ");
             String year = scanner.nextLine();
@@ -70,8 +106,9 @@ public class CarServiceImpl implements CarService {
             System.out.print("input type: ");
             String type = Regex.regexCar(scanner.nextLine(), REGEXTRAVELCAR1, "ERROR REGEX TYPE(TravelCar)");
 
-            return new Car(licenseplate, menufacture, year, boss, seat, type);
-        } catch (NumberFormatException e) {
+            return new Car(licenseplate, facture, year, boss, seat, type);
+        } catch (
+                NumberFormatException e) {
             System.err.println("Input not Number, Please re-input!");
             e.printStackTrace();
         }

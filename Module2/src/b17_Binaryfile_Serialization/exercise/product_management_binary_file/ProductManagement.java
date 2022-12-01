@@ -5,8 +5,8 @@ import java.util.List;
 import java.util.Scanner;
 
 public class ProductManagement {
-    static Scanner scanner = new Scanner(System.in);
-    static List<Product> productList = new ArrayList<>();
+    private static Scanner scanner = new Scanner(System.in);
+    private static List<Product> productList = new ArrayList<>();
 
     //Viết một chương trình cho phép người dùng thêm, hiển thị, tìm kiếm thông tin sản phẩm vào file.
     //ghi file(output)
@@ -53,7 +53,7 @@ public class ProductManagement {
     public void addProduct(String path) {
         // tiến hành đọc lại file và ghi lại chèn file cũ
         //đọc file để lấy lại list cũ
-//        List<Product> productList = readFromFileObject(path);
+//       List<Product> productList = readFromFileObject(path);
 
         // nhập product mới và thêm vào list
         productList.add(newProduct());

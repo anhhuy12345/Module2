@@ -22,6 +22,7 @@ public class IsBinary {
             count = 0;
 
 
+
         }
     }
 }

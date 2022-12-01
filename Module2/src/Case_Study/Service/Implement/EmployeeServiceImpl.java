@@ -80,7 +80,10 @@ public class EmployeeServiceImpl implements EmployeeService {
         for (String employeeString : stringList) {
             //vì các thuộc tính trong file CSV được ngăn cách bởi dấu ","
             String[] stringProperty = employeeString.split(",");
-            employeeList.add(new Employee(stringProperty[0], stringProperty[1], stringProperty[2], stringProperty[3], Integer.parseInt(stringProperty[4]), stringProperty[5], stringProperty[6], stringProperty[7], stringProperty[8], stringProperty[9], Double.parseDouble(stringProperty[10])));
+            employeeList.add(new Employee(stringProperty[0], stringProperty[1], stringProperty[2],
+                    stringProperty[3], Integer.parseInt(stringProperty[4]), stringProperty[5],
+                    stringProperty[6], stringProperty[7], stringProperty[8], stringProperty[9],
+                    Double.parseDouble(stringProperty[10])));
         }
         return employeeList;
     }

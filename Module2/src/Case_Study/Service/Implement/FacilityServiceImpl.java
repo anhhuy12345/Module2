@@ -50,7 +50,9 @@ public class FacilityServiceImpl implements FacilityService {
         List<String> stringListRoom = roomReadAndWrite.readFromFile(PATH_ROOM);
         for (String room : stringListRoom) {
             String[] roomArray = room.split(",");
-            roomList.put(new Room(roomArray[0], roomArray[1], Double.parseDouble(roomArray[2]), Double.parseDouble(roomArray[3]), Integer.parseInt(roomArray[4]), roomArray[5], roomArray[6]), Integer.parseInt(roomArray[7]));
+            roomList.put(new Room(roomArray[0], roomArray[1], Double.parseDouble(roomArray[2]),
+                    Double.parseDouble(roomArray[3]), Integer.parseInt(roomArray[4]),
+                    roomArray[5], roomArray[6]), Integer.parseInt(roomArray[7]));
         }
         return roomList;
     }
@@ -61,7 +63,10 @@ public class FacilityServiceImpl implements FacilityService {
         List<String> stringListVilla = villaReadAndWrite.readFromFile(PATH_VILLA);
         for (String villa : stringListVilla) {
             String[] villaArray = villa.split(",");
-            villaList.put(new Villa(villaArray[0], villaArray[1], Double.parseDouble(villaArray[2]), Double.parseDouble(villaArray[3]), Integer.parseInt(villaArray[4]), villaArray[5], villaArray[6], Double.parseDouble(villaArray[7]), Integer.parseInt(villaArray[8])), Integer.parseInt(villaArray[9]));
+            villaList.put(new Villa(villaArray[0], villaArray[1], Double.parseDouble(villaArray[2]),
+                    Double.parseDouble(villaArray[3]), Integer.parseInt(villaArray[4]), villaArray[5],
+                    villaArray[6], Double.parseDouble(villaArray[7]), Integer.parseInt(villaArray[8])),
+                    Integer.parseInt(villaArray[9]));
         }
         return villaList;
     }
@@ -82,7 +87,8 @@ public class FacilityServiceImpl implements FacilityService {
         } else {
             //sử dụng entrySet để duyệt các phần tử trong list Map
             for (Map.Entry<Facility, Integer> element : facilityList.entrySet()) {
-                System.out.println("Facility: " + element.getKey().toStringDisplay() + " USED " + element.getValue() + " times");
+                System.out.println("Facility: " + element.getKey().toStringDisplay()
+                        + " USED " + element.getValue() + " times");
             }
         }
     }
@@ -94,7 +100,8 @@ public class FacilityServiceImpl implements FacilityService {
         System.out.println("-----LIST Facility need maintenance-----");
         for (Map.Entry<Facility, Integer> element : facilityList.entrySet()) {
             if (element.getValue() >= 5) { // 5
-                System.out.println("Facility: " + element.getKey().toStringDisplay() + " USED " + element.getValue() + " times");
+                System.out.println("Facility: " +
+                        element.getKey().toStringDisplay() + " USED " + element.getValue() + " times");
             }
         }
     }
@@ -152,7 +159,8 @@ public class FacilityServiceImpl implements FacilityService {
             int numberFloor = Integer.parseInt(scanner.nextLine());
 
             //tạo đối tượng Villa
-            Villa villa = new Villa(idFacility, name, area, cost, maxPeople, rentType, standardRoom, areaPool, numberFloor);
+            Villa villa = new Villa(idFacility, name, area, cost, maxPeople, rentType
+                    , standardRoom, areaPool, numberFloor);
 
             //bỏ đối tượng vào Map List:
             // Key: cơ sở nào
