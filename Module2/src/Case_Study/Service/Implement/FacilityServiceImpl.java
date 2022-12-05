@@ -64,8 +64,8 @@ public class FacilityServiceImpl implements FacilityService {
         for (String villa : stringListVilla) {
             String[] villaArray = villa.split(",");
             villaList.put(new Villa(villaArray[0], villaArray[1], Double.parseDouble(villaArray[2]),
-                    Double.parseDouble(villaArray[3]), Integer.parseInt(villaArray[4]), villaArray[5],
-                    villaArray[6], Double.parseDouble(villaArray[7]), Integer.parseInt(villaArray[8])),
+                            Double.parseDouble(villaArray[3]), Integer.parseInt(villaArray[4]), villaArray[5],
+                            villaArray[6], Double.parseDouble(villaArray[7]), Integer.parseInt(villaArray[8])),
                     Integer.parseInt(villaArray[9]));
         }
         return villaList;
@@ -129,6 +129,22 @@ public class FacilityServiceImpl implements FacilityService {
         return RegexData.regexStr(scanner.nextLine(), REGEX_AREA, "ERROR REGEX Cost villa!");
     }
 
+    private String inputPeopleVilla() {
+        System.out.print("Input Max People Villa: ");
+        return RegexData.regexStr(scanner.nextLine(), REGEX_PERSON, "ERROR REGEX Max People villa!");
+    }
+
+    private String inputIdRoom() {
+        System.out.print("Input name id Facility Room: ");
+        return RegexData.regexStr(scanner.nextLine(), REGEX_ID_ROOM, "ERROR REGEX id Room! REGEX: SVRO-YYYY");
+    }
+
+    private String inputNameRoom() {
+        System.out.print("Input name Room: ");
+        return RegexData.regexStr(scanner.nextLine(), REGEX_STR, "ERROR REGEX Name room!");
+    }
+
+
     @Override
     public void addNewVilla() {
         //đọc file lấy list villa
@@ -143,8 +159,7 @@ public class FacilityServiceImpl implements FacilityService {
 
             double cost = Double.parseDouble(inputCostVilla());
 
-            System.out.print("Input max People Villa: ");
-            int maxPeople = Integer.parseInt(scanner.nextLine());
+            int maxPeople = Integer.parseInt(inputPeopleVilla());
 
             System.out.print("Input rent Type Villa: ");
             String rentType = scanner.nextLine();
@@ -187,11 +202,8 @@ public class FacilityServiceImpl implements FacilityService {
         Map<Room, Integer> listRoom = getListRoom();
         try {
             //nhập thông tin Room
-            System.out.print("Input name id Facility Room: ");
-            String idFacility = scanner.nextLine();
-
-            System.out.print("Input name Room: ");
-            String name = scanner.nextLine();
+            String idFacility = inputIdRoom();
+            String name = inputNameRoom();
 
             System.out.print("Input area Room: ");
             double area = Double.parseDouble(scanner.nextLine());

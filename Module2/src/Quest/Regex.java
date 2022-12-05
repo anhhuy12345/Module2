@@ -19,7 +19,7 @@ public class Regex {
     }
 //"^[a-z A-Z]{1,50}$"
     public static void main(String[] args) {
-        final String REGEX ="^([\\p{Lu}][\\p{Ll}]{1,8})(\\s([\\p{Lu}]|[\\p{Lu}][\\p{Ll}]{1,10})){0,5}$";
+        final String REGEX ="^(C)[0-9]{4}(G)[0-9]{1}$";
         System.out.print("input Class : ");
         String Class  = Regex.regexClass(scanner.nextLine(), REGEX, "PLEASE RE-INPUT!");
         System.out.println(Class);

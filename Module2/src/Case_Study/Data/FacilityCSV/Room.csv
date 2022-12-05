@@ -1,2 +1,2 @@
 idFacility, name, area, cost, maxPeople, rentType, standardRoomHouse, numberFloorHouse, USED
-SVRO-0001,Rôm,12.0,12.0,12,12,12,1
+SVRO-0001,Room,12.0,2000.0,4,Day,wqter,1

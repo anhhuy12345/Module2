@@ -16,7 +16,7 @@ public class RegexTest {
     }
 
     public static void main(String[] args) {
-        final String REGEX = "^(Mr|Mrs|Ms|Dr|Er)\\.([a-zA-Z]+ )$";
+        final String REGEX = "^(C)[0-9]{4}(G1)$";
         System.out.print("input ID : ");
 
 
